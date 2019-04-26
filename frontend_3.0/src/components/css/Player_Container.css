@@ -1,0 +1,44 @@
+tbody{
+  color:#2C3E50;
+}
+
+h2{
+  margin-bottom:5px;
+  color:#f96332;
+}
+
+.card {
+  width: auto;
+}
+
+.Prow {
+  text-align: center;
+}
+
+.Player_Column{
+  float: left;
+  padding-left:20px;
+}
+
+.Player_Column_Right{
+  float: left;
+}
+
+.Player_Info{
+   transform: translate(5%, 8%);
+   width: auto;
+}
+
+.Player_Info_Table{
+  padding-left:2px;
+}
+
+.Player_Row{
+  column-count: 2;
+}
+.Player_Row a {
+  padding-top:7px;
+  font-size:17px;
+  color:#2C3E50;
+  text-align: left;
+}

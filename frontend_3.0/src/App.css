@@ -1,0 +1,21 @@
+body {
+  background-image: url("../src/images/Hardwood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main_panel {
+  width:100%;
+}
+.Scatter{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: auto;
+  align: center;
+}

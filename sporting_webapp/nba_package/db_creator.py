@@ -32,7 +32,8 @@ class SummaryScrape:
         data["Age"]=pd.to_numeric(data["Age"])
 
         #Remove null values
-        [data[list].fillna(0, inplace=True) for list in ["FG%", "3P%", "2P%", "eFG%", "FT%"]]
+        [data[list].fillna(0, inplace=True) for list in ["FG%", "3P%", "2P%",
+         "eFG%", "FT%"]]
 
         #Create Year Column in DataFrame
         data["Year"] = self.year
@@ -44,6 +45,11 @@ class SummaryScrape:
         data = data.drop(["Pos", "Age", ], axis=1)
 
         #Per Game stats
+        normal = ["MP", "ORB", "DRB", "TRB", "AST", "STL", "BLK", "TOV", "PTS"]
+
+        for label in normal:
+            data[label] = data[label]/data["G"]
+
         return data
 
 #Iterates and Scrapes from Team Pages
@@ -166,6 +172,6 @@ engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_
 summary_tabel.to_sql("Summary Stats", con= engine, if_exists="replace", chunksize=10)
 
 #Test Code
-#print(summary_tabel.columns)
+print(summary_tabel.head(10))
 
 #===============================================================================

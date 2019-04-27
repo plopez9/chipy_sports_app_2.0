@@ -13,7 +13,8 @@ class SummaryStats(models.Model):
     tm = models.TextField(db_column='Tm', blank=True, null=True)
     g = models.BigIntegerField(db_column='G', blank=True, null=True)
     gs = models.BigIntegerField(db_column='GS', blank=True, null=True)
-    mp = models.BigIntegerField(db_column='MP', blank=True, null=True)
+    mp = models.DecimalField(db_column='MP', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
     fg = models.BigIntegerField(db_column='FG', blank=True, null=True)
     fga = models.BigIntegerField(db_column='FGA', blank=True, null=True)
     fg_percent = models.DecimalField(db_column='FGpct', blank=True, null=True,
@@ -32,15 +33,23 @@ class SummaryStats(models.Model):
     fta = models.BigIntegerField(db_column='FTA', blank=True, null=True)
     ft_field = models.DecimalField(db_column='FTpct', blank=True, null=True,
     decimal_places=3, max_digits=4,)
-    orb = models.BigIntegerField(db_column='ORB', blank=True, null=True)
-    drb = models.BigIntegerField(db_column='DRB', blank=True, null=True)
-    trb = models.BigIntegerField(db_column='TRB', blank=True, null=True)
-    ast = models.BigIntegerField(db_column='AST', blank=True, null=True)
-    stl = models.BigIntegerField(db_column='STL', blank=True, null=True)
-    blk = models.BigIntegerField(db_column='BLK', blank=True, null=True)
-    tov = models.BigIntegerField(db_column='TOV', blank=True, null=True)
+    orb = models.DecimalField(db_column='ORB', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    drb = models.DecimalField(db_column='DRB', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    trb = models.DecimalField(db_column='TRB', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    ast = models.DecimalField(db_column='AST', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    stl = models.DecimalField(db_column='STL', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    blk = models.DecimalField(db_column='BLK', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
+    tov = models.DecimalField(db_column='TOV', blank=True,
+     null=True, decimal_places= 1, max_digits=4,)
     pf = models.BigIntegerField(db_column='PF', blank=True, null=True)
-    pts = models.BigIntegerField(db_column='PTS', blank=True, null=True)
+    pts = models.DecimalField(db_column='PTS', blank=True,
+     null=True,  decimal_places= 1, max_digits=4,)
     year = models.BigIntegerField(db_column='Year', blank=True, null=True)
 
     class Meta:
@@ -55,7 +64,7 @@ class PlayerInfo(models.Model):
     ht = models.TextField(db_column='Ht', blank=True, null=True)
     wt = models.BigIntegerField(db_column='Wt', blank=True, null=True)
     birth_date = models.DateTimeField(db_column='Birth Date',
-    blank=True, null=True)
+     blank=True, null=True)
     country = models.TextField(db_column='Country', blank=True, null=True)
     exp = models.BigIntegerField(db_column='Exp', blank=True, null=True)
     college = models.TextField(db_column='College', blank=True, null=True)

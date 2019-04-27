@@ -43,9 +43,6 @@ class FirstPlot extends Component{
       )}
 
     else{
-      console.log(items);
-      console.log(isLoaded);
-      console.log(ylist)
 
       return(
         <Plot

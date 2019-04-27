@@ -8,23 +8,36 @@ import PlayerApp from "./components/Player_Container";
 import FirstPlot from "./components/Bar_Chart";
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      stats: [],
+    };
+  }
+
+  componentDidMount(){
+
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=Stephen%20Curry")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        stats: json,
+      })
+    });
+
+  }
+
   render(){
     return(
       <div className="App">
 
         <div className="main_panel">
-          <ScatterApp />
-
-
           <div className="row">
-          <div className="col-md-6">
-            <PlayerApp />
-          </div>
+            <div className="col-md-6">
+              <PlayerApp />
+            </div>
           </div>
 
-        <div className="col-md-6">
-          <FirstPlot />
-        </div>
       </div>
 
     </div>

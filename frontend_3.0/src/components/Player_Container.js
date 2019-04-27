@@ -12,11 +12,13 @@ class PlayerApp extends Component {
     this.state={
       pInfo: [],
       stats: [],
+      player: "James Harden"
     };
   }
 
   componentDidMount(){
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=Stephen%20Curry")
+
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=James Harden")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -24,18 +26,20 @@ class PlayerApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=Stephen%20Curry")
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=James Harden")
     .then(response => response.json())
     .then(json => {
       this.setState({
         stats: json,
       })
     });
+
   }
 
   render(){
     var {pInfo, stats} = this.state
-    console.log(this.state.stats)
+
+    console.log(stats)
 
     return(
       <div className="App">
@@ -113,51 +117,45 @@ class PlayerApp extends Component {
 
                     <tbody>
                       <tr>
-                        <td> 2019 </td>
-                        <td> 40 </td>
-                        <td> 45 </td>
-                        <td> 32.1 </td>
-                        <td> 0.789 </td>
-                        <td> 0.562 </td>
-                        <td> 0.327 </td>
-                        <td> 3.1 </td>
-                        <td> 0.9 </td>
-                        <td> 4.2 </td>
-                        <td> 2.2 </td>
-                        <td> 6.7 </td>
-                        <td> 14.1 </td>
-                      </tr>
-
-                      <tr>
-                        <td> 2018 </td>
-                        <td> 40 </td>
-                        <td> 45 </td>
-                        <td> 32.1 </td>
-                        <td> 0.789 </td>
-                        <td> 0.562 </td>
-                        <td> 0.327 </td>
-                        <td> 3.1 </td>
-                        <td> 0.9 </td>
-                        <td> 4.2 </td>
-                        <td> 2.2 </td>
-                        <td> 6.7 </td>
-                        <td> 14.1 </td>
-                      </tr>
-
-                      <tr>
-                        <td> 2017 </td>
-                        <td> 40 </td>
-                        <td> 45 </td>
-                        <td> 32.1 </td>
-                        <td> 0.789 </td>
-                        <td> 0.562 </td>
-                        <td> 0.327 </td>
-                        <td> 3.1 </td>
-                        <td> 0.9 </td>
-                        <td> 4.2 </td>
-                        <td> 2.2 </td>
-                        <td> 6.7 </td>
-                        <td> 14.1 </td>
+                        {stats.map(item=>
+                          <td> {item.year} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.g} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.gs} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.mp} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.ft_field} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.number_2p_field} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.number_3p_field} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.tov} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.blk} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.stl} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.trb} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.ast} </td>
+                        )}
+                        {stats.map(item=>
+                          <td> {item.pts} </td>
+                        )}
                       </tr>
                     </tbody>
                   </table>

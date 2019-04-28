@@ -27,12 +27,17 @@ class FirstPlot extends Component{
 
   render(){
     var {isLoaded, items} = this.state;
-    const ylist = items.map(item=>{
-      return(
-        [item.number_2018_19, item.number_2019_20, item.number_2020_21,
-          item.number_2021_22, item.number_2022_23]
-      )
-    })
+    var ylist;
+    console.log('items is:', items)
+    const pInfo = items[0];
+    console.log('pinfo is:', pInfo)
+    if (pInfo != undefined) {
+      ylist = [pInfo.number_2018_19, pInfo.number_2019_20, pInfo.number_2020_21,
+               pInfo.number_2021_22, pInfo.number_2022_23];
+    } else {
+      ylist = [];
+    }
+    console.log("ylist is:", ylist)
 
     if (!isLoaded){
 
@@ -48,8 +53,8 @@ class FirstPlot extends Component{
         <Plot
           data={[
             {
-              x: [1,2,3,4,5],
-              y: [1,2,3,4,5],
+              x: ["2018-19","2019-20","2020-21","2021-22","2022-23"],
+              y: ylist,
               type: "bar",
               mode: "markers",
               marker: {color: "Blue"},

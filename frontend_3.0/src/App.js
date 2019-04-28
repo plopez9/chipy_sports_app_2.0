@@ -36,6 +36,7 @@ class App extends Component {
             <div className="col-md-6">
               <PlayerApp />
             </div>
+            <FirstPlot/>
           </div>
 
       </div>

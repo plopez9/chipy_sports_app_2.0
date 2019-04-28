@@ -18,7 +18,7 @@ class PlayerApp extends Component {
 
   componentDidMount(){
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=James Harden")
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -26,7 +26,7 @@ class PlayerApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=James Harden")
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({

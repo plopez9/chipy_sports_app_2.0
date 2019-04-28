@@ -6,7 +6,6 @@ import avatar from "./images/default-avatar.png";
 
 
 class PlayerApp extends Component {
-
   constructor(props){
     super(props);
     this.state={

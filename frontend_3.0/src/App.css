@@ -10,12 +10,17 @@ body {
 
 .main_panel {
   width:100%;
-}
-.Scatter{
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: auto;
+  overflow: hidden;
+}
+.Top{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  width: 100%;
   align: center;
 }

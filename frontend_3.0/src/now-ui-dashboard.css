@@ -2854,7 +2854,12 @@ Created using IcoMoon - icomoon.io
   background-color: #ebecf1;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1); }
+  transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+ }
 
   .main-panel > .content {
     padding: 0 30px 30px;

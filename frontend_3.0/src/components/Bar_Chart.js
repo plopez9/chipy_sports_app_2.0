@@ -15,7 +15,7 @@ class FirstPlot extends Component{
   }
 
   componentDidMount(){
-    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json&player=Stephen%20Curry")
+    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json&player=T.J. Leaf")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -28,16 +28,15 @@ class FirstPlot extends Component{
   render(){
     var {isLoaded, items} = this.state;
     var ylist;
-    console.log('items is:', items)
-    const pInfo = items[0];
-    console.log('pinfo is:', pInfo)
-    if (pInfo != undefined) {
-      ylist = [pInfo.number_2018_19, pInfo.number_2019_20, pInfo.number_2020_21,
-               pInfo.number_2021_22, pInfo.number_2022_23];
+
+    const Contracts = items[0];
+
+    if (Contracts !== undefined) {
+      ylist = [Contracts.number_2018_19, Contracts.number_2019_20, Contracts.number_2020_21,
+               Contracts.number_2021_22, Contracts.number_2022_23];
     } else {
       ylist = [];
     }
-    console.log("ylist is:", ylist)
 
     if (!isLoaded){
 
@@ -63,6 +62,9 @@ class FirstPlot extends Component{
 
           layout ={{
             title: "Contract Obligations",
+            autosize: false,
+            width:600,
+            height:400,
             yaxis:{
               title: "Money Owed"
             },

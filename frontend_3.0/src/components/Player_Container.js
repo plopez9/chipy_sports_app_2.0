@@ -17,7 +17,7 @@ class PlayerApp extends Component {
 
   componentDidMount(){
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=T.J. Leaf")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -25,7 +25,7 @@ class PlayerApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=LeBron James")
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=T.J. Leaf")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -37,8 +37,6 @@ class PlayerApp extends Component {
 
   render(){
     var {pInfo, stats} = this.state
-
-    console.log(stats)
 
     return(
       <div className="App">

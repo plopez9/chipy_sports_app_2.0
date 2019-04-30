@@ -156,7 +156,7 @@ def get_contracts():
 #===============================================================================
 #Make Tables
 # summary_tabel = SummaryScrape(2019).make_data()
-#p_table = PlayerScrape(2019).get_players()
+p_table = PlayerScrape(2019).get_players()
 #contract_data = get_contracts()
 
 
@@ -172,6 +172,6 @@ def get_contracts():
 #summary_tabel.to_sql("Summary Stats", con= engine, if_exists="replace", chunksize=10)
 
 #Test Code
-#print(p_table["Birth Date"].head())
+print(p_table["Birth Date"].head())
 
 #===============================================================================

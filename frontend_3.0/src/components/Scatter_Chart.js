@@ -5,14 +5,44 @@ import Plot from "react-plotly.js"
 
 
 class SecondPlot extends Component{
+
+  constructor(props){
+    super(props);
+    this.state={
+      summary: [],
+    };
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        summary: json,
+      })
+    });
+  }
+
   render(){
+    var {summary} = this.state;
+
+    if (xdata!== undefined){
+      // xdata = [summary.mp];
+    }
+
+    else{
+      xdata= [];
+    }
+    let xdata= summary.map(item => item.mp)
+    let ydata = summary.map(item => item.pts)
+
 
       return(
         <Plot
           data={[
             {
-              x: [1,2,3,4,5],
-              y: [5,3,8,4,6],
+              x: xdata,
+              y: ydata,
               type: "scatter",
               mode: "markers",
               marker: {color: "Blue"},

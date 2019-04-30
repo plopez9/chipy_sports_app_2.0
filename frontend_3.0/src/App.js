@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import "./components/bootstrap.min.css";
 import "./App.css";
 
 import ScatterApp from "./components/Scatter_Container";

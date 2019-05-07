@@ -17,7 +17,7 @@ class PlayerApp extends Component {
 
   componentDidMount(){
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=T.J. Leaf")
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -25,7 +25,7 @@ class PlayerApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=T.J. Leaf")
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -65,11 +65,6 @@ class PlayerApp extends Component {
                     <div className="Prow">
                       {pInfo.map(item=>
                         <a>Position: {item.pos} </a>
-                      )}
-                    </div>
-                    <div className="Prow">
-                      {pInfo.map(item=>
-                        <a>Birthday: {item.birth_date}</a>
                       )}
                     </div>
                     <div className="Prow">

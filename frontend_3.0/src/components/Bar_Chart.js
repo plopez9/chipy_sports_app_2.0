@@ -14,8 +14,8 @@ class FirstPlot extends Component{
     };
   }
 
-  componentDidMount(){
-    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json&player=T.J. Leaf")
+  componentWillMount(){
+    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({

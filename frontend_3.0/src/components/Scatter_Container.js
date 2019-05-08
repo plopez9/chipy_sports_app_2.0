@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import FirstPlot from "./Scatter_Chart"
+import SecondPlot from "./Scatter_Chart"
 
 class ScatterApp extends Component {
   render(){
@@ -9,7 +9,7 @@ class ScatterApp extends Component {
       <div className="App">
         <div className="testdiv">
           <div className="card  card-tasks">
-            <FirstPlot />
+            <SecondPlot />
           </div>
         </div>
       </div>

@@ -13,10 +13,7 @@ from django.core.serializers import serialize
 
 # Create your views here.
 def index(request):
-    context = {
-        'foo': 'Nick',
-    }
-    return render(request, "first_screen.html", context=context)
+    return render(request, "first_screen.html")
 
 def home_screen(request):
     return render(request, "index.html")

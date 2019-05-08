@@ -44,9 +44,6 @@ class SecondPlot extends Component{
     let py= individual.map(item => item.pts)
     let pname = individual.map(item =>item.player)
 
-    console.log(px)
-
-
       return(
         <Plot
           data={[
@@ -71,13 +68,13 @@ class SecondPlot extends Component{
           ]}
 
           layout ={{
-            title: "Contract Obligations",
+            title: "Points Scored vs Minutes Played",
             showlegend: false,
             yaxis:{
-              title: "Money Owed"
+              title: "Points Scored per Game"
             },
             xaxis: {
-              title: "X Title"
+              title: "Minutes Played per Game"
             },
           }}
         />

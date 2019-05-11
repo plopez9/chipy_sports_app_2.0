@@ -1,0 +1,46 @@
+.sidenav{
+  height:100%;
+  background: black;
+  opacity: 0.92;
+  position: fixed;
+  box-shadow: 2px 0px 5px rba(0,0,0,0.5);
+  top:0;
+  left:0;
+  width: 260px;
+  z-index: 200;
+}
+
+.Closetag{
+  margin-top: 10px;
+  margin-right: 20px;
+  float: right;
+  font-size: 18px;
+}
+
+.Closetag:hover,
+.Closetag:active{
+  color:white;
+  cursor: pointer;
+}
+
+.sidediv{
+  color:#B3B6B7;
+}
+
+.sidediv ul{
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidediv li{
+  margin:10px;
+  font-size: 18px
+
+}
+.sidediv li:hover,
+.sidediv li:active{
+  color:white;
+}

@@ -1,0 +1,40 @@
+.Thead{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: black;
+}
+
+.Navbar{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.Logo{
+  flex: 1;
+  color: #B3B6B7;
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.Titems{
+  color: #D7DBDD;
+  flex:1;
+}
+
+.Titems ul{
+  display: flex;
+  list-style: none;
+}
+
+.Titems li{
+  flex: 1;
+  text-align: center;
+}
+
+.Titems li:hover,
+.Titems li:active{
+  color: #fa923f;
+}

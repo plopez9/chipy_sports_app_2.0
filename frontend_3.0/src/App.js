@@ -6,6 +6,10 @@ import Sidenav from "./components/toolbar/sidenav.js";
 import Backdrop from "./components/Backdrop.js";
 import ToolBar from "./components/toolbar/toolbar";
 
+import ScatterApp from "./components/Scatter_Container";
+import FirstPlot from "./components/Bar_Chart";
+import PlayerApp from "./components/Player_Container";
+
 class App extends Component {
 
   state = {
@@ -24,8 +28,6 @@ class App extends Component {
 
 
   render(){
-    console.log(this.state.SNOpen)
-
     let backdrop;
 
     if (this.state.SNOpen){
@@ -34,8 +36,13 @@ class App extends Component {
 
     return(
       <div className="App">
-        <Sidenav close= {this.CloseClickHandler} show={this.state.SNOpen}/>
+        <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
         <ToolBar sideClickHandler={this.SNTClickHandler}/>
+
+        <div className="Row">
+          <ScatterApp/>
+        </div>
+
         {backdrop}
       </div>
     );

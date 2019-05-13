@@ -1,0 +1,23 @@
+.button{
+  display: flex;
+  float: right;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+  height: 20px;
+  width: 25px;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.marker{
+  width:25px;
+  height: 3px;
+  background: white;
+}
+
+.button marker: hover,
+.button marker: active{
+  color:white;
+}

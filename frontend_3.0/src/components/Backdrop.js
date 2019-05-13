@@ -8,12 +8,10 @@ import PlayerApp from "./Player_Container";
 import FirstPlot from "./Bar_Chart";
 
 const Backdrop = props =>(
-  <div className="back">
+  <div className="back" onClick={props.BDClick}>
 
     <div className="row">
-      <div className="Top">
-        <ScatterApp/>
-      </div>
+      <ScatterApp/>
     </div>
 
     <div className="row">
@@ -23,6 +21,10 @@ const Backdrop = props =>(
       <div className="col-md-6">
         <FirstPlot/>
       </div>
+    </div>
+
+    <div className="row">
+      <div className="footer"> This is a footer </div>
     </div>
   </div>
 );

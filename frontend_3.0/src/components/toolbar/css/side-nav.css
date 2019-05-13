@@ -8,6 +8,12 @@
   left:0;
   width: 260px;
   z-index: 200;
+  transform: translate(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.sidenav.open{
+  transform: translate(0%);
 }
 
 .Closetag{

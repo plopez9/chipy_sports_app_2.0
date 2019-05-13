@@ -2,13 +2,12 @@ import React from "react";
 
 import "./css/toolbar.css"
 
-import icon from "./Toolbar-Images/iconfinder_bball.png"
-import ToggleButton from "./toggle-button"
+import ToggleButton from "./open-button"
 
 const ToolBar = props => (
   <header className= "Thead">
     <nav className= "Navbar">
-    <ToggleButton/>
+    <ToggleButton click={props.sideClickHandler}/>
     <div className= "Logo"> Open </div>
     <div className="Titems">
         <ul>

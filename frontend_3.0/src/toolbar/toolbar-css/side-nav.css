@@ -43,10 +43,14 @@
 
 .sidediv li{
   margin:10px;
-  font-size: 18px
-
+  font-size: 18px;
 }
-.sidediv li:hover,
-.sidediv li:active{
+
+.sidediv li a{
+  color: #B3B6B7;
+}
+
+.sidediv li a:hover,
+.sidediv li a:active{
   color:white;
 }

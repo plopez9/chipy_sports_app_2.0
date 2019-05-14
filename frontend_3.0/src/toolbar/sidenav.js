@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./css/side-nav.css"
+import "./toolbar-css/side-nav.css"
 
 import CloseButton  from "./close-button"
 
@@ -14,11 +14,11 @@ const Sidenav = props => {
   return(
     <nav className= {navClasses}>
       <div className="sidediv">
-        <CloseButton click={props.SNClick}/>
+        <CloseButton className="Button" click={props.SNClick}/>
         <ul>
           <li></li>
-          <li> Main Page</li>
-          <li> NBA Dashboard </li>
+          <li> <a href="./src/App.js"> Main Page </a> </li>
+          <li> <a href="./src/App.js"> NBA Dashboard </a> </li>
           <li> NFL Dashboard </li>
           <li> MLB Dashboard </li>
           </ul>

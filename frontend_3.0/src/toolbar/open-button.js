@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./css/open-button.css";
+import "./toolbar-css/open-button.css";
 
 const ToggleButton = props => (
   <button className="button" onClick={props.click}>

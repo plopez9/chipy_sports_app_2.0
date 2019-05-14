@@ -2,13 +2,12 @@ import React, { Component } from "react";
 
 import "./App.css";
 
-import Sidenav from "./components/toolbar/sidenav.js";
-import Backdrop from "./components/Backdrop.js";
-import ToolBar from "./components/toolbar/toolbar";
+import Sidenav from "./toolbar/sidenav.js";
+import ToolBar from "./toolbar/toolbar";
 
-import ScatterApp from "./components/Scatter_Container";
-import FirstPlot from "./components/Bar_Chart";
-import PlayerApp from "./components/Player_Container";
+import ScatterApp from "./NBA-Components/Scatter_Container";
+import FirstPlot from "./NBA-Components/Bar_Chart";
+import PlayerApp from "./NBA-Components/Player_Container";
 
 class App extends Component {
 

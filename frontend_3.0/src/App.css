@@ -1,5 +1,5 @@
 body {
-  background-image: url("../src/components/images/Hardwood.jpg");
+  background-image: url("../src/NBA-Components/images/Hardwood.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 14px;
@@ -23,7 +23,6 @@ body {
 }
 .Row{
   width: auto;
-  align-content: center;
   display: flex;
   justify-content: space-around;
   overflow: hidden;
@@ -42,7 +41,6 @@ body {
 .Contract-data{
   height: 410px;
   overflow: hidden;
-  background: grey
 }
 
 .footer{

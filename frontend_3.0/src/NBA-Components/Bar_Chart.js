@@ -38,15 +38,6 @@ class FirstPlot extends Component{
       ylist = [];
     }
 
-    if (!isLoaded){
-
-      return (
-        <div>
-          loading.....
-        </div>
-      )}
-
-    else{
 
       return(
         <Plot
@@ -75,9 +66,6 @@ class FirstPlot extends Component{
         />
       )
     }
-
-
-  }
 }
 
 

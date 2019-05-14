@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./css/toolbar.css"
+import "./toolbar-css/toolbar.css"
 
 import ToggleButton from "./open-button"
 
@@ -13,8 +13,8 @@ const ToolBar = props => (
         <ul>
           <li> Blog Posts </li>
           <li> Search Player </li>
-          <li> X Dropdown </li>
-          <li> Y Dropdown </li>
+          <li> X-Axis </li>
+          <li> Y-Axis </li>
         </ul>
       </div>
     </nav>

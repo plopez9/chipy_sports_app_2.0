@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./bootstrap.min.css";
-import"./css/Player_Container.css";
+import"./NBA-Component-css/Player_Container.css";
 import avatar from "./images/default-avatar.png";
 
 
@@ -17,7 +17,7 @@ class PlayerApp extends Component {
 
   componentDidMount(){
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=Giannis Antetokounmpo")
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
     .then(response => response.json())
     .then(json => {
       this.setState({

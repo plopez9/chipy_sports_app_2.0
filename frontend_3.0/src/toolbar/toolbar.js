@@ -11,8 +11,8 @@ const ToolBar = props => (
     <div className= "Logo"> Open </div>
     <div className="Titems">
         <ul>
-          <li> Blog Posts </li>
           <li> Search Player </li>
+          <li> Blog Post </li>
           <li> X-Axis </li>
           <li> Y-Axis </li>
         </ul>

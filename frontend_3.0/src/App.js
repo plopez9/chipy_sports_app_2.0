@@ -9,7 +9,7 @@ import ScatterApp from "./NBA-Components/Scatter_Container";
 import FirstPlot from "./NBA-Components/Bar_Chart";
 import PlayerApp from "./NBA-Components/Player_Container";
 
-class App extends Component {
+class NBAApp extends Component {
 
   state = {
     SNOpen: false
@@ -46,11 +46,15 @@ class App extends Component {
           </div>
         </div>
 
-        <div className="footer"> This is a footer </div>
+        <div className="footer">
+          <div className="footer1"> Footer 1 </div>
+          <div className="footer2"> Footer 2 </div>
+          <div className="footer3"> Footer 3 </div>
+        </div>
 
       </div>
     );
   }
 }
 
-export default App
+export default NBAApp

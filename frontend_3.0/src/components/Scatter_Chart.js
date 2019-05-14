@@ -68,6 +68,7 @@ class SecondPlot extends Component{
           ]}
 
           layout ={{
+            autosize: true,
             title: "Points Scored vs Minutes Played",
             showlegend: false,
             yaxis:{

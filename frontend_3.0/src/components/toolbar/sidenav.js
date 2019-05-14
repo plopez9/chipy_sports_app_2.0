@@ -14,7 +14,7 @@ const Sidenav = props => {
   return(
     <nav className= {navClasses}>
       <div className="sidediv">
-        <CloseButton onClick={props.SNClick}/>
+        <CloseButton click={props.SNClick}/>
         <ul>
           <li></li>
           <li> Main Page</li>

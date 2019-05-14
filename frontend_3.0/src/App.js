@@ -28,22 +28,27 @@ class App extends Component {
 
 
   render(){
-    let backdrop;
-
-    if (this.state.SNOpen){
-      backdrop = <Backdrop BDClick={this.CloseClickHandler}/>
-    }
 
     return(
       <div className="App">
         <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
         <ToolBar sideClickHandler={this.SNTClickHandler}/>
 
-        <div className="Row">
+        <div className="TopRow">
           <ScatterApp/>
         </div>
 
-        {backdrop}
+        <div className="Row">
+          <div className="Player-data">
+            <PlayerApp/>
+          </div>
+          <div className="Contract-data">
+            <FirstPlot/>
+          </div>
+        </div>
+
+        <div className="footer"> This is a footer </div>
+
       </div>
     );
   }

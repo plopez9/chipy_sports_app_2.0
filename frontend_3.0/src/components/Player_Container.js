@@ -17,7 +17,7 @@ class PlayerApp extends Component {
 
   componentDidMount(){
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=Giannis Antetokounmpo")
     .then(response => response.json())
     .then(json => {
       this.setState({

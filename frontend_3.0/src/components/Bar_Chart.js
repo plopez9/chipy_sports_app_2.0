@@ -64,7 +64,7 @@ class FirstPlot extends Component{
             title: "Contract Obligations",
             autosize: false,
             width:600,
-            height:400,
+            height:410,
             yaxis:{
               title: "Money Owed"
             },

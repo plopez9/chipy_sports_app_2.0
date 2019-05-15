@@ -35,7 +35,6 @@ class SecondPlot extends Component{
   render(){
     var {summary, individual} = this.state;
 
-
     let xdata= summary.map(item => item.mp)
     let ydata = summary.map(item => item.pts)
     let name = summary.map(item => item.player)

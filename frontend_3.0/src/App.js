@@ -13,8 +13,8 @@ class NBAApp extends Component {
 
   state = {
     SNOpen: false,
+    Player:"Lebron James",
     SummaryItems: [],
-    PlayerSummary: [],
   };
 
   SNTClickHandler =() => {
@@ -38,14 +38,18 @@ class NBAApp extends Component {
   };
 
   render(){
-    console.log(this.state.SummaryItems)
+    var value = this.state.Player.toLowerCase()
+    var summaryFilter= this.state.SummaryItems.filter(function(player){
+      return player.player.toLowerCase()=== value
+    });
+
     return(
       <div className="App">
         <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
         <ToolBar sideClickHandler={this.SNTClickHandler}/>
 
         <div className="TopRow">
-          <ScatterApp/>
+          <ScatterApp player={this.state.Player} data={this.state.SummaryItems}/>
         </div>
 
         <div className="Row">

@@ -9,7 +9,6 @@ class FirstPlot extends Component{
   constructor(props){
     super(props);
     this.state={
-      isLoaded: false,
       items: [],
     };
   }
@@ -19,14 +18,13 @@ class FirstPlot extends Component{
     .then(response => response.json())
     .then(json => {
       this.setState({
-        isLoaded: true,
         items: json,
       })
     });
   }
 
   render(){
-    var {isLoaded, items} = this.state;
+    var {items} = this.state;
     var ylist;
 
     const Contracts = items[0];

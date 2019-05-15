@@ -11,10 +11,12 @@ const ToolBar = props => (
     <div className= "Logo"> Open </div>
     <div className="Titems">
         <ul>
-          <li> Search Player </li>
-          <li> Blog Post </li>
-          <li> X-Axis </li>
-          <li> Y-Axis </li>
+          <li>
+            <input type="text" className="PlayerSearch" placeholder="Search Player"/>
+          </li>
+          <li> Blogpost </li>
+          <li> X-Dropdown </li>
+          <li> Y-Dropdown </li>
         </ul>
       </div>
     </nav>

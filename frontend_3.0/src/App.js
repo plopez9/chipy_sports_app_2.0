@@ -12,7 +12,9 @@ import PlayerApp from "./NBA-Components/Player_Container";
 class NBAApp extends Component {
 
   state = {
-    SNOpen: false
+    SNOpen: false,
+    SummaryItems: [],
+    PlayerSummary: [],
   };
 
   SNTClickHandler =() => {
@@ -23,11 +25,20 @@ class NBAApp extends Component {
 
   CloseClickHandler = () =>{
     this.setState({SNOpen: false})
-  }
+  };
 
+  componentWillMount(){
+    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        SummaryItems: json,
+      })
+    });
+  };
 
   render(){
-
+    console.log(this.state.SummaryItems)
     return(
       <div className="App">
         <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>

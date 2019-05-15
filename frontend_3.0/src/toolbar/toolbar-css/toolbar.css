@@ -14,6 +14,14 @@
   height: 100%;
 }
 
+.PlayerSearch{
+  width: 195px;
+  background-color: #797D7F;
+  border-color: #797D7F;
+  border-radius: 15px;
+  text-align: center;
+}
+
 .Logo{
   flex: 1;
   color: #B3B6B7;
@@ -25,6 +33,7 @@
 .Titems{
   color: #D7DBDD;
   flex:1;
+  padding-top: 20px;
 }
 
 .Titems ul{
@@ -34,8 +43,10 @@
 }
 
 .Titems li{
-  flex: 1;
+  flex: auto;
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Titems li:hover,

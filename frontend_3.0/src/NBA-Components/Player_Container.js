@@ -6,37 +6,21 @@ import avatar from "./images/default-avatar.png";
 
 
 class PlayerApp extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      pInfo: [],
-      stats: [],
-      player: "James Harden"
-    };
-  }
-
-  componentDidMount(){
-
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json&player=LeBron James")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        pInfo: json,
-      })
-    });
-
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=LeBron James")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        stats: json,
-      })
-    });
-
-  }
 
   render(){
-    var {pInfo, stats} = this.state
+    var player = this.props.player
+    var data = this.props.data
+    var info =this.props.info
+
+    var pInfo = info.filter(function(item){
+      return item.player === player
+    })
+
+    var stats = data.filter(function(item){
+      return item.player === player
+    })
+
+    console.log(data)
 
     return(
       <div className="App">

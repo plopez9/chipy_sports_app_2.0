@@ -13,7 +13,7 @@ class NBAApp extends Component {
 
   state = {
     SNOpen: false,
-    Player:"LeBron James",
+    Player:"Bradley Beal",
     SummaryItems: [],
     ContractItems: [],
     InfoItems:[],

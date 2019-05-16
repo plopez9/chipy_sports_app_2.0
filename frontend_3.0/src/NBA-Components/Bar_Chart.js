@@ -21,9 +21,6 @@ class FirstPlot extends Component{
         var ylist = [];
       }
 
-    console.log(ylist)
-
-
 
       return(
         <Plot
@@ -43,7 +40,8 @@ class FirstPlot extends Component{
             width:600,
             height:410,
             yaxis:{
-              title: "Money Owed"
+              title: "Money Owed",
+              range: [0, 50000000]
             },
             xaxis: {
               title: "Year"

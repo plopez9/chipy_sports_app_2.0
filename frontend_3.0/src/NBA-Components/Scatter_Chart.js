@@ -6,63 +6,35 @@ import Plot from "react-plotly.js"
 
 class SecondPlot extends Component{
 
-  constructor(props){
-    super(props);
-    this.state={
-      summary: [],
-      individual: [],
-    };
-  }
-
-  componentWillMount(){
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        summary: json,
-      })
-    });
-
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json&player=LeBron James")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        individual: json,
-      })
-    });
-  }
-
   render(){
-    var {summary, individual} = this.state;
+    var player =this.props.player
+    var data = this.props.data
 
-    let xdata= summary.map(item => item.mp)
-    let ydata = summary.map(item => item.pts)
-    let name = summary.map(item => item.player)
+    var pdata = data.filter(function(item){
+      return item.player.toLowerCase() === player.toLowerCase()
+    });
 
-    let px= individual.map(item => item.mp)
-    let py= individual.map(item => item.pts)
-    let pname = individual.map(item =>item.player)
 
       return(
         <Plot
           data={[
             {
-              x: xdata,
-              y: ydata,
+              x: data.map(item => item.mp),
+              y: data.map(item => item.pts),
               type: "scatter",
               mode: "markers",
               marker: {color: "Blue"},
-              hovertext: name,
               hoverinfo: "text",
+              hovertext: data.map(item => item.player),
             },
             {
-              x: px,
-              y: py,
+              x: pdata.map(item => item.mp),
+              y: pdata.map(item => item.pts),
               type: "scatter",
               mode: "markers",
               marker: {color: "Red"},
-              hovertext: pname,
               hoverinfo: "text",
+              hovertext: pdata.map(item => item.player),
             }
           ]}
 

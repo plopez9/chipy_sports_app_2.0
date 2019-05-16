@@ -13,8 +13,10 @@ class NBAApp extends Component {
 
   state = {
     SNOpen: false,
-    Player:"Lebron James",
+    Player:"LeBron James",
     SummaryItems: [],
+    ContractItems: [],
+    InfoItems:[],
   };
 
   SNTClickHandler =() => {
@@ -35,13 +37,25 @@ class NBAApp extends Component {
         SummaryItems: json,
       })
     });
+
+    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        InfoItems: json,
+      })
+    });
+
+    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        ContractItems: json,
+      })
+    });
   };
 
   render(){
-    var value = this.state.Player.toLowerCase()
-    var summaryFilter= this.state.SummaryItems.filter(function(player){
-      return player.player.toLowerCase()=== value
-    });
 
     return(
       <div className="App">
@@ -54,10 +68,11 @@ class NBAApp extends Component {
 
         <div className="Row">
           <div className="Player-data">
-            <PlayerApp/>
+            <PlayerApp player={this.state.Player} info={this.state.InfoItems}
+             data={this.state.SummaryItems}/>
           </div>
           <div className="Contract-data">
-            <FirstPlot/>
+            <FirstPlot player={this.state.Player} contracts={this.state.ContractItems}/>
           </div>
         </div>
 

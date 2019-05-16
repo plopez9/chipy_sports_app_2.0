@@ -6,35 +6,23 @@ import Plot from "react-plotly.js"
 
 class FirstPlot extends Component{
 
-  constructor(props){
-    super(props);
-    this.state={
-      items: [],
-    };
-  }
-
-  componentWillMount(){
-    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json&player=LeBron James")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        items: json,
-      })
-    });
-  }
-
   render(){
-    var {items} = this.state;
-    var ylist;
+    var player = this.props.player
+    var data = this.props.contracts
 
-    const Contracts = items[0];
+    var contract = data.filter(function(item){
+      return item.player === player
+    })[0];
 
-    if (Contracts !== undefined) {
-      ylist = [Contracts.number_2018_19, Contracts.number_2019_20, Contracts.number_2020_21,
-               Contracts.number_2021_22, Contracts.number_2022_23];
-    } else {
-      ylist = [];
-    }
+    if (contract !== undefined) {
+      var ylist = [contract.number_2018_19, contract.number_2019_20, contract.number_2020_21,
+           contract.number_2021_22, contract.number_2022_23];
+      } else {
+        var ylist = [];
+      }
+
+    console.log(ylist)
+
 
 
       return(
@@ -50,7 +38,7 @@ class FirstPlot extends Component{
           ]}
 
           layout ={{
-            title: "Contract Obligations",
+            title: player + "'s Contract Obligations",
             autosize: false,
             width:600,
             height:410,

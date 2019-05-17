@@ -13,7 +13,7 @@ class NBAApp extends Component {
 
   state = {
     SNOpen: false,
-    Player:"Bradley Beal",
+    Player:"Klay Thompson",
     SummaryItems: [],
     ContractItems: [],
     InfoItems:[],
@@ -28,6 +28,12 @@ class NBAApp extends Component {
   CloseClickHandler = () =>{
     this.setState({SNOpen: false})
   };
+
+  PlayerSelect(name){
+    this.setState({
+      Player: name
+    });
+  }
 
   componentWillMount(){
     fetch("http://localhost:8000/nba_package/jsonSummary/?format=json")
@@ -60,7 +66,8 @@ class NBAApp extends Component {
     return(
       <div className="App">
         <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
-        <ToolBar sideClickHandler={this.SNTClickHandler}/>
+        <ToolBar sideClickHandler={this.SNTClickHandler}
+         nameSelect={this.PlayerSelect.bind(this)}/>
 
         <div className="TopRow">
           <ScatterApp player={this.state.Player} data={this.state.SummaryItems}/>

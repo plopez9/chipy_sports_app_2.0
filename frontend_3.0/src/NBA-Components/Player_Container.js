@@ -20,8 +20,6 @@ class PlayerApp extends Component {
       return item.player === player
     })
 
-    console.log(data)
-
     return(
       <div className="App">
         <div className="card">

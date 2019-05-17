@@ -11,12 +11,15 @@ import PlayerApp from "./NBA-Components/Player_Container";
 
 class NBAApp extends Component {
 
-  state = {
+  constructor() {
+    super();
+    this.state={
     SNOpen: false,
     Player:"Klay Thompson",
     SummaryItems: [],
     ContractItems: [],
     InfoItems:[],
+    }
   };
 
   SNTClickHandler =() => {
@@ -62,6 +65,8 @@ class NBAApp extends Component {
   };
 
   render(){
+
+    console.log(this.state.Player)
 
     return(
       <div className="App">

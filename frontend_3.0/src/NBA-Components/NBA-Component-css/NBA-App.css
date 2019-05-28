@@ -1,0 +1,51 @@
+body {
+  background-image: url("../src/NBA-Components/images/Hardwood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+.app {
+  height:100%;
+}
+
+.TopRow{
+  width: auto;
+  align-content: center;
+  height: 450px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.Row{
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.Player-data{
+  width:48%;
+  min-width: 560px;
+  height: 410px;
+}
+
+.Contract-data{
+  height: 410px;
+  overflow: hidden;
+}
+
+.footer{
+  height: 50px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+}

@@ -8,13 +8,20 @@ class ToolBar extends Component {
   constructor(props){
     super();
     this.state={
-      Player: "James Harden"
+      Player: props.currentPlayer
     }
   }
 
   changeName(){
     this.props.nameSelect(this.state.Player);
   }
+
+  eventHandle(event) {
+    this.setState({
+      Player: event.target.value
+    })
+  }
+
   render(){
 
     return(
@@ -22,12 +29,20 @@ class ToolBar extends Component {
         <nav className= "Navbar">
         <ToggleButton click={this.props.sideClickHandler}/>
         <div className= "Logo"> Open </div>
-        <button onClick={this.changeName.bind(this)}> Test button </button>
         <div className="Titems">
             <ul>
-              <li>
-                <input type="text" className="PlayerSearch"
-                 placeholder="Search Player"/>
+              <li className ="SearchButton">
+                <button
+                 className="PushButton"
+                 onClick={this.changeName.bind(this)}>
+                  Search </button>
+                <input
+                 type="text"
+                 className="PlayerSearch"
+                 placeholder="Search Player"
+                 value={this.state.Player}
+                 onChange={(event) => this.eventHandle(event)}
+                />
               </li>
               <li> Blogpost </li>
               <li> X-Dropdown </li>

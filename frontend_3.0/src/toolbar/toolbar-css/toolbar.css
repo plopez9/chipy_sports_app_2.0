@@ -14,12 +14,23 @@
   height: 100%;
 }
 
+.SearchButton{
+  display: flex;
+}
+
 .PlayerSearch{
   width: 195px;
   background-color: #797D7F;
   border-color: #797D7F;
   border-radius: 15px;
   text-align: center;
+  margin-left: 7px;
+}
+
+.PushButton{
+  background-color: #CCCECE;
+  border-radius: 12px;
+  margin-right: 7px;
 }
 
 .Logo{
@@ -40,6 +51,7 @@
   display: flex;
   list-style: none;
   margin-right: 20px;
+  width: 680px;
 }
 
 .Titems li{

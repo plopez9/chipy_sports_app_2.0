@@ -5,27 +5,11 @@ import ToolBar from "./toolbar/toolbar";
 
 class NFLApp extends Component {
 
-  state = {
-    SNOpen: false
-  };
-
-  SNTClickHandler =() => {
-    this.setState((prevState) => {
-      return {SNOpen: !prevState.SNOpen};
-    });
-  };
-
-  CloseClickHandler = () =>{
-    this.setState({SNOpen: false})
-  }
-
-
   render(){
 
     return(
       <div className="App">
-        <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
-        <ToolBar sideClickHandler={this.SNTClickHandler}/>
+        <h1> This is the NFL App </h1>
 
 
         <div className="footer"> This is a footer </div>

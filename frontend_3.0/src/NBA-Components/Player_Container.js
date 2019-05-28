@@ -6,7 +6,6 @@ import avatar from "./images/default-avatar.png";
 
 
 class PlayerApp extends Component {
-
   render(){
     var player = this.props.player
     var data = this.props.data
@@ -19,6 +18,8 @@ class PlayerApp extends Component {
     var stats = data.filter(function(item){
       return item.player === player
     })
+
+    console.log(stats)
 
     return(
       <div className="App">
@@ -44,6 +45,7 @@ class PlayerApp extends Component {
                         <p> {item.college} </p>
                       )}
                     </div>
+                    
                     <div className="Prow">
                       {pInfo.map(item=>
                         <a>Position: {item.pos} </a>

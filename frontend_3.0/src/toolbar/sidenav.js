@@ -1,4 +1,5 @@
 import React from "react";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import "./toolbar-css/side-nav.css"
 
@@ -15,13 +16,15 @@ const Sidenav = props => {
     <nav className= {navClasses}>
       <div className="sidediv">
         <CloseButton className="Button" click={props.SNClick}/>
-        <ul>
-          <li></li>
-          <li> <a href="./src/App.js"> Main Page </a> </li>
-          <li> <a href="./src/App.js"> NBA Dashboard </a> </li>
-          <li> <a href="./src/NFL-App.js"> NFL Dashboard </a> </li>
-          <li> <a href="./src/NFL-App.js"> MLB Dashboard </a> </li>
+        <BrowserRouter>
+          <ul>
+            <li></li>
+            <li> <a href="./src/App.js"> Main Page </a> </li>
+            <li> <a href="./src/App.js"> NBA Dashboard </a> </li>
+            <li> <a href="./src/NFL-App.js"> NFL Dashboard </a> </li>
+            <li> <a href="./src/NFL-App.js"> MLB Dashboard </a> </li>
           </ul>
+        </BrowserRouter>
         </div>
     </nav>
   );

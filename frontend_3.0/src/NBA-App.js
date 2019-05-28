@@ -9,7 +9,7 @@ import ScatterApp from "./NBA-Components/Scatter_Container";
 import FirstPlot from "./NBA-Components/Bar_Chart";
 import PlayerApp from "./NBA-Components/Player_Container";
 
-class AppJS extends Component {
+class NBAApp extends Component {
 
   state = {
     SNOpen: false,
@@ -94,4 +94,4 @@ class AppJS extends Component {
   }
 }
 
-export default AppJS
+export default NBAApp

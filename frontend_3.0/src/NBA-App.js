@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import "./App.css";
 
-import Sidenav from "./toolbar/sidenav.js";
 import ToolBar from "./toolbar/toolbar";
 
 import ScatterApp from "./NBA-Components/Scatter_Container";
@@ -65,10 +64,8 @@ class NBAApp extends Component {
 
     return(
       <div className="App">
-        <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
-        <ToolBar sideClickHandler={this.SNTClickHandler}
-         nameSelect={this.PlayerSelect.bind(this)}/>
-
+      <ToolBar sideClickHandler={this.SNTClickHandler}
+       nameSelect={this.PlayerSelect.bind(this)}/>
         <div className="TopRow">
           <ScatterApp player={this.state.Player} data={this.state.SummaryItems}/>
         </div>

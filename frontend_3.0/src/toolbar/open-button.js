@@ -1,13 +1,22 @@
-import React from "react";
+import React, {Component} from "react";
 
 import "./toolbar-css/open-button.css";
 
-const ToggleButton = props => (
-  <button className="button" onClick={props.click}>
-    <div className="line"/>
-    <div className="line"/>
-    <div className="line"/>
-  </button>
-)
+class ToggleButton extends Component {
+  constructor(props){
+    super();
+  }
+
+  render(){
+    console.log(this.props)
+    return(
+      <button className="button" onClick={this.props.sideClickHandler}>
+        <div className="line"/>
+        <div className="line"/>
+        <div className="line"/>
+      </button>
+  )
+}
+}
 
 export default ToggleButton

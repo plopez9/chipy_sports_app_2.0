@@ -18,6 +18,9 @@
   display: flex;
 }
 
+.Spacer{
+  width: 50px;
+}
 .PlayerSearch{
   width: 195px;
   background-color: #797D7F;

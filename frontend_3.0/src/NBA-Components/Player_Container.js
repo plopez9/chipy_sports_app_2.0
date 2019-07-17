@@ -19,8 +19,6 @@ class PlayerApp extends Component {
       return item.player === player
     })
 
-    console.log(stats)
-
     return(
       <div className="App">
         <div className="card">
@@ -45,7 +43,7 @@ class PlayerApp extends Component {
                         <p> {item.college} </p>
                       )}
                     </div>
-                    
+
                     <div className="Prow">
                       {pInfo.map(item=>
                         <a>Position: {item.pos} </a>

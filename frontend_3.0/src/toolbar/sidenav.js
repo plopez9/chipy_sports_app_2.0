@@ -1,8 +1,11 @@
 import React from "react";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
 
 import "./toolbar-css/side-nav.css"
 
+import NBAApp from "../NBA-App"
+import NFLApp from "../NFL-App"
+import MLBApp from "../MLB-App"
 import CloseButton  from "./close-button"
 
 const Sidenav = props => {
@@ -13,20 +16,31 @@ const Sidenav = props => {
       navClasses="sidenav open"
     }
   return(
+    <BrowserRouter>
     <nav className= {navClasses}>
       <div className="sidediv">
         <CloseButton className="Button" click={props.SNClick}/>
-        <BrowserRouter>
           <ul>
             <li></li>
             <li> <a href="./src/App.js"> Main Page </a> </li>
-            <li> <a href="./src/App.js"> NBA Dashboard </a> </li>
-            <li> <a href="./src/NFL-App.js"> NFL Dashboard </a> </li>
-            <li> <a href="./src/NFL-App.js"> MLB Dashboard </a> </li>
+            <li>
+              <Link to="/NBA"> NBA Dashboard </Link>
+            </li>
+            <li>
+              <Link to="/NFL"> NFL Dashboard </Link>
+            </li>
+            <li>
+              <Link to="/MLB"> MLB Dashboard </Link>
+            </li>
           </ul>
-        </BrowserRouter>
         </div>
     </nav>
+
+    <Route path="/NBA" component={NBAApp}/>
+    <Route path="/NFL" component={NFLApp}/>
+    <Route path="/MLB" component={MLBApp}/>
+
+  </BrowserRouter>
   );
 };
 

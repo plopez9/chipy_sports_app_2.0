@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import Sidenav from "./toolbar/sidenav.js";
-import ToolBar from "./toolbar/toolbar";
+import "./MLB-Components/mlb.css";
 
 class MLBApp extends Component {
 
@@ -23,13 +22,11 @@ class MLBApp extends Component {
   render(){
 
     return(
-      <div className="App">
-        <Sidenav show={this.state.SNOpen} SNClick={this.CloseClickHandler}/>
-        <ToolBar sideClickHandler={this.SNTClickHandler}/>
+      <div className="MLBApp">
+        <h1> This is the MLB App </h1>
 
 
         <div className="footer"> This is a footer </div>
-
       </div>
     );
   }

@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 
-import Sidenav from "./toolbar/sidenav.js";
-import ToolBar from "./toolbar/toolbar";
+import "./NFL-Components/nfl.css";
 
 class NFLApp extends Component {
 
   render(){
 
     return(
-      <div className="App">
-        <h1> This is the NFL App </h1>
+      <div className="NFLApp">
+        <div className="content">
+          <div className="text">
+            <h4> New NFL App Coming Soon! </h4>
+            <p> Thank You For Your Patience </p>
+          </div>
+        </div>
 
 
         <div className="footer"> This is a footer </div>

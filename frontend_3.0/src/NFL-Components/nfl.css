@@ -1,0 +1,20 @@
+.NFLApp{
+  height: 100%;
+  text-align: center;
+}
+.content{
+  margin-top: 75px;
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  border-color: black;
+  height: 100px;
+  width: 60%;
+}
+
+.footer{
+  height: 50px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+}

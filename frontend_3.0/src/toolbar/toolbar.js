@@ -8,9 +8,17 @@ class ToolBar extends Component {
   constructor(props){
     super();
     this.state={
-      Player: props.currentPlayer
+      Player: props.currentPlayer,
+      SNOpen: false,
+
     }
   }
+
+  SNTClickHandler =() => {
+    this.setState((prevState) => {
+      return {SNOpen: !prevState.SNOpen};
+    });
+  };
 
   changeName(){
     this.props.nameSelect(this.state.Player);
@@ -23,11 +31,11 @@ class ToolBar extends Component {
   }
 
   render(){
-
+    console.log(this.state)
     return(
       <header className= "Thead">
         <nav className= "Navbar">
-        <ToggleButton click={this.props.sideClickHandler}/>
+        <div className="Spacer"></div> 
         <div className= "Logo"> Open </div>
         <div className="Titems">
             <ul>

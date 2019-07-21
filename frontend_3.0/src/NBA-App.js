@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import "./App.css";
+import "./NBA-App.css";
+import Hardwood from "../src/NBA-Components/images/Hardwood.jpg"
 
 import ToolBar from "./toolbar/toolbar";
-
 import ScatterApp from "./NBA-Components/Scatter_Container";
 import FirstPlot from "./NBA-Components/Bar_Chart";
 import PlayerApp from "./NBA-Components/Player_Container";
@@ -11,22 +11,12 @@ import PlayerApp from "./NBA-Components/Player_Container";
 class NBAApp extends Component {
 
   state = {
-    SNOpen: false,
     Player:"James Harden",
     SummaryItems: [],
     ContractItems: [],
     InfoItems:[],
   };
 
-  SNTClickHandler =() => {
-    this.setState((prevState) => {
-      return {SNOpen: !prevState.SNOpen};
-    });
-  };
-
-  CloseClickHandler = () =>{
-    this.setState({SNOpen: false})
-  };
 
   PlayerSelect(input){
     this.setState({
@@ -60,12 +50,16 @@ class NBAApp extends Component {
     });
   };
 
+
   render(){
 
     return(
-      <div className="App">
-      <ToolBar sideClickHandler={this.SNTClickHandler}
-       nameSelect={this.PlayerSelect.bind(this)}/>
+      <div className="App" style = {{
+        backgroundColor: 'red',
+      }}>
+
+      <ToolBar nameSelect={this.PlayerSelect.bind(this)}/>
+
         <div className="TopRow">
           <ScatterApp player={this.state.Player} data={this.state.SummaryItems}/>
         </div>

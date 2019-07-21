@@ -22,11 +22,15 @@ class MLBApp extends Component {
   render(){
 
     return(
-      <div className="MLBApp">
-        <h1> This is the MLB App </h1>
-
-
-        <div className="footer"> This is a footer </div>
+      <div className="MLBApp" style={{
+        backgroundColor:"green"
+      }}>
+        <div className="content">
+          <div className="text">
+            <h4> New MLB Page Coming Soon! </h4>
+            <p> Thank You For Your Patience </p>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,21 @@
+
+.MLBApp{
+  height: 100vh;
+  text-align: center;
+}
+.content{
+  margin-top: 75px;
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  border-color: black;
+  height: 100px;
+  width: 60%;
+}
+.text{
+  margin-top: 20px;
+}
+
+.text p{
+  color: #a6a6a6;
+}

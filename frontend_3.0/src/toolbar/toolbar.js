@@ -1,24 +1,13 @@
 import React, {Component} from "react";
-
 import "./toolbar-css/toolbar.css"
-
-import ToggleButton from "./open-button"
 
 class ToolBar extends Component {
   constructor(props){
     super();
     this.state={
       Player: props.currentPlayer,
-      SNOpen: false,
-
     }
   }
-
-  SNTClickHandler =() => {
-    this.setState((prevState) => {
-      return {SNOpen: !prevState.SNOpen};
-    });
-  };
 
   changeName(){
     this.props.nameSelect(this.state.Player);
@@ -35,7 +24,7 @@ class ToolBar extends Component {
     return(
       <header className= "Thead">
         <nav className= "Navbar">
-        <div className="Spacer"></div> 
+        <div className="Spacer"></div>
         <div className= "Logo"> Open </div>
         <div className="Titems">
             <ul>

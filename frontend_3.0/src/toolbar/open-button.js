@@ -8,7 +8,7 @@ class ToggleButton extends Component {
   }
 
   render(){
-    console.log(this.props)
+
     return(
       <button className="button" onClick={this.props.sideClickHandler}>
         <div className="line"/>

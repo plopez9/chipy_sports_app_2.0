@@ -20,7 +20,7 @@ class ToolBar extends Component {
   }
 
   render(){
-    console.log(this.state)
+
     return(
       <header className= "Thead">
         <nav className= "Navbar">

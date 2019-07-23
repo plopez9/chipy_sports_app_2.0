@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./NBA-App.css";
-import Hardwood from "../src/NBA-Components/images/Hardwood.jpg"
+import Hardwood from "../src/NBA-Components/images/Hardwood.jpg";
 
 import ToolBar from "./toolbar/toolbar";
 import ScatterApp from "./NBA-Components/Scatter_Container";
@@ -55,7 +55,9 @@ class NBAApp extends Component {
 
     return(
       <div className="App" style = {{
-        backgroundColor: 'red',
+        backgroundImage: 'url(".src/NBA-Components/images/Hardwood.jpg")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}>
 
       <ToolBar nameSelect={this.PlayerSelect.bind(this)}/>

@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Sidenav from "./toolbar/sidenav.js";
-import ToolBar from "./toolbar/toolbar";
 import ToggleButton from "./toolbar/open-button"
 
 class App extends Component {

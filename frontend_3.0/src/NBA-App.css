@@ -9,8 +9,11 @@ body {
   height: 100vh;
 }
 
-.app {
+.App {
   height:100%;
+  background-image: url("../src/NBA-Components/images/Hardwood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .TopRow{

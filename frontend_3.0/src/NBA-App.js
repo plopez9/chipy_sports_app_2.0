@@ -54,11 +54,7 @@ class NBAApp extends Component {
   render(){
 
     return(
-      <div className="App" style = {{
-        backgroundImage: 'url(".src/NBA-Components/images/Hardwood.jpg")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}>
+      <div className="App">
 
       <ToolBar nameSelect={this.PlayerSelect.bind(this)}/>
 

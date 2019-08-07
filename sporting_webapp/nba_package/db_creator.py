@@ -161,12 +161,6 @@ def get_contracts():
 #contract_data = get_contracts()
 
 
-
-##Loop through the league since the Current League Construction
-#for x in range (2010, 2019):
-#data = data.append(SummaryScrape(2019).make_data())
-#p_table = p_table.append(TeamScrape(2019).get_players())
-
 ##Create Database
 #engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
 

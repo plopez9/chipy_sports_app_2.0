@@ -7,9 +7,7 @@ class NFLApp extends Component {
   render(){
 
     return(
-      <div className="NFLApp" style={{
-        backgroundColor:"blue"
-      }}>
+      <div className="NFLApp">
         <div className="content">
           <div className="text">
             <h4> New NFL Page Coming Soon! </h4>

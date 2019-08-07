@@ -6,6 +6,9 @@ body {
   height: 100vh;
 }
 .NFLApp{
+  background-color: blue;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   text-align: center;
 }

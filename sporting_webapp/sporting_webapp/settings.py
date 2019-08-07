@@ -76,7 +76,7 @@ def template_dir(sub_dir):
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             template_dir('mlb_package/templates'),
             template_dir('nba_package/templates'),

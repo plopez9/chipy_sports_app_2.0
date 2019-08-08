@@ -10,7 +10,7 @@ import requests
 import io
 
 from bs4 import BeautifulSoup as bs
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select, Table, MetaData
 #Following functions work for year 2016 or greater
 
 
@@ -105,7 +105,7 @@ class FootballData:
         return summary
 
 # Database Creation
-print(FootballData(2018).PlayerSummary(1,18).reset_index())
+#print(FootballData(2018).PlayerSummary(1,18).reset_index())
 
 
 #for n in range(2016, 2019):

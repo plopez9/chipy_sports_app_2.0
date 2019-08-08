@@ -9,7 +9,7 @@ router.register("Summary", views.SummaryView)
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path("json", include(router.urls)),
+    path("", include(router.urls)),
     path("home", views.home_screen, name="Home Screen")
 #    path("json_summary", views.summary_request, name="summary_request"),
 #    path("json_player", views.player_request, name="player_request"),

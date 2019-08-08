@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from .NFLmodels import NFLPlayerSummary
+from .NFLmodels import NflSummary
 
-class NFLSummarySerializer(serializers.ModelSerializer):
+class NflSummarySerializer(serializers.ModelSerializer):
     class Meta:
-        model = NFLPlayerSummary
-        fields = ("player", "pos", "year")
-#        read_only_fields = [f.name for f in PlayerInfo._meta.get_fields()]
+        model = NflSummary
+        fields = ("name", "pos", "year", "gp", "average_points_scored", "std",
+        "average_points_allowed", "defense_std")
+        read_only_fields = [f.name for f in NflSummary._meta.get_fields()]

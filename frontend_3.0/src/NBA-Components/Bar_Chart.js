@@ -18,7 +18,7 @@ class FirstPlot extends Component{
       var ylist = [contract.number_2018_19, contract.number_2019_20, contract.number_2020_21,
            contract.number_2021_22, contract.number_2022_23];
       } else {
-        var ylist = [];
+        ylist = [];
       }
 
 

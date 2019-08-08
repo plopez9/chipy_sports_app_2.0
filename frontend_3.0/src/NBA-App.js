@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import "./NBA-App.css";
-import Hardwood from "../src/NBA-Components/images/Hardwood.jpg";
 
 import ToolBar from "./toolbar/toolbar";
 import ScatterApp from "./NBA-Components/Scatter_Container";
@@ -25,7 +24,7 @@ class NBAApp extends Component {
   }
 
   componentWillMount(){
-    fetch("http://localhost:8000/nba_package/jsonSummary/?format=json")
+    fetch("http://localhost:8000/nba_package/Summary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -33,7 +32,7 @@ class NBAApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonPlayerInfo/?format=json")
+    fetch("http://localhost:8000/nba_package/PlayerInfo/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -41,7 +40,7 @@ class NBAApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/jsonContracts/?format=json")
+    fetch("http://localhost:8000/nba_package/Contracts/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

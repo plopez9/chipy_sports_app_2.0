@@ -2,23 +2,8 @@ import React, { Component } from "react";
 
 class LeaderTable extends Component{
 
-  state ={
-    YearlyStats: [],
-  };
-
-  componentWillMount(){
-
-    fetch("http://localhost:8000/nfl_package/NFLSummary/?format=json")
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        YearlyStats: json,
-      })
-    });
-  };
-
   TableBody(){
-    return this.state.YearlyStats.map((player, index) =>{
+    return this.props.YearlyStats.map((player, index) =>{
       const{name, pos, year, gp, average_points_scored, std, average_points_allowed, defense_std} = player
       return(
         <tr key={name}>
@@ -52,6 +37,13 @@ class LeaderTable extends Component{
   }
 
   render(){
+
+    function compare (a,b){
+      return b.average_points_scored - a.average_points_scored
+    }
+
+    this.props.YearlyStats.sort(compare)
+
       return(
         <div className="Display Card" style={{
           width: "100%",

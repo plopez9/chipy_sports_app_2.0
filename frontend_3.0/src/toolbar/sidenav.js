@@ -36,6 +36,7 @@ const Sidenav = props => {
         </div>
     </nav>
 
+    <Route path="/src" component={NBAApp}/>
     <Route path="/NBA" component={NBAApp}/>
     <Route path="/NFL" component={NFLApp}/>
     <Route path="/MLB" component={MLBApp}/>

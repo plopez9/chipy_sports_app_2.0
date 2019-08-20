@@ -1,14 +1,28 @@
 import React, { Component } from "react";
 
 class LeaderTable extends Component{
+  state ={
+    YearlyStats: [],
+  };
+
+  componentWillMount(){
+
+    fetch("http://localhost:8000/nfl_package/NFLSummary/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        YearlyStats: json,
+      })
+    });
+  };
 
   TableBody(){
-    return this.props.YearlyStats.map((player, index) =>{
+    return this.state.YearlyStats.map((player, index) =>{
       const{name, pos, year, gp, average_points_scored, std, average_points_allowed, defense_std} = player
       return(
         <tr key={name}>
           <td style={{
-            width:"15%",
+            width:"16%",
           }}>{name}</td>
           <td style={{
             width:"11%",
@@ -29,7 +43,7 @@ class LeaderTable extends Component{
             width:"13.5%",
           }}>{average_points_allowed}</td>
           <td style={{
-            width:"12.5%",
+            width:"11.5%",
           }}>{defense_std}</td>
         </tr>
       )
@@ -42,26 +56,18 @@ class LeaderTable extends Component{
       return b.average_points_scored - a.average_points_scored
     }
 
-    this.props.YearlyStats.sort(compare)
+    this.state.YearlyStats.sort(compare)
 
       return(
-        <div className="Display Card" style={{
-          width: "100%",
-          height: "450px",
-          backgroundColor: "coral",
-          marginTop: "5%",
-          marginBottom: "5%",
-          alignContent:"center",
-        }}>
           <div className="Display Table" style={{
             position:"relative",
             top: "5%",
-            left:"17%",
             borderStyle:"ridge",
             overflow: "auto",
             height: "400px",
             width:"840px",
             backgroundColor:"white",
+            margin: "auto",
           }}>
             <thead className="Table-Header" style={{
               backgroundColor:"#F0F8FF",
@@ -81,7 +87,6 @@ class LeaderTable extends Component{
               {this.TableBody()}
             </tbody>
           </div>
-        </div>
       );
     }
 }

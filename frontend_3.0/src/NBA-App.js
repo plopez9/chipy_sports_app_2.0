@@ -71,12 +71,6 @@ class NBAApp extends Component {
           </div>
         </div>
 
-        <div className="footer">
-          <div className="footer1"> Footer 1 </div>
-          <div className="footer2"> Footer 2 </div>
-          <div className="footer3"> Footer 3 </div>
-        </div>
-
       </div>
     );
   }

@@ -1,0 +1,42 @@
+.ComponentList{
+  display:flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.FootballNav{
+  background-color: black;
+  height: 100px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.ListSpacing{
+  width: 35%;
+  position: relative;
+  top:50%;
+  transform:translateY(-50%) ;
+  float: right;
+}
+
+.PlayerButtons{
+  width: 60%;
+  float: right;
+  position: relative;
+  top:50%;
+  transform:translateY(-50%) ;
+}
+
+.PlayerSearch{
+  width: 175px;
+  float: right;
+  margin-right: 7px;
+}
+
+.PushButton{
+  float: right;
+}
+
+ul{
+  list-style-type: none;
+}

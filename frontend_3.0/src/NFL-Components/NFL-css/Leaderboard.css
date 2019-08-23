@@ -1,0 +1,13 @@
+.DisplayTable{
+
+  border-style: ridge;
+  overflow: auto;
+  height: 400px;
+  width:840px;
+  background-color: white;
+  margin: auto;
+}
+
+.Table-Header{
+  background-color: #F0F8FF;
+}

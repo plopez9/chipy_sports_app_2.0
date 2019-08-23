@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./toolbar-css/toolbar.css"
+import "./NBA-Component-css/toolbar.css"
 
 class ToolBar extends Component {
   constructor(props){
@@ -41,9 +41,9 @@ class ToolBar extends Component {
                  onChange={(event) => this.eventHandle(event)}
                 />
               </li>
-              <li> Blogpost </li>
               <li> X-Dropdown </li>
               <li> Y-Dropdown </li>
+              <li> Blogpost </li>
             </ul>
           </div>
         </nav>

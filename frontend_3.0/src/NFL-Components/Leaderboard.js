@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./NFL-css/Leaderboard.css"
+
 class LeaderTable extends Component{
   state ={
     YearlyStats: [],
@@ -59,19 +61,8 @@ class LeaderTable extends Component{
     this.state.YearlyStats.sort(compare)
 
       return(
-          <div className="Display Table" style={{
-            position:"relative",
-            top: "5%",
-            borderStyle:"ridge",
-            overflow: "auto",
-            height: "400px",
-            width:"840px",
-            backgroundColor:"white",
-            margin: "auto",
-          }}>
-            <thead className="Table-Header" style={{
-              backgroundColor:"#F0F8FF",
-            }}>
+          <div className="DisplayTable">
+            <thead className="Table-Header">
               <tr>
               <th> Player </th>
               <th> Pos </th>

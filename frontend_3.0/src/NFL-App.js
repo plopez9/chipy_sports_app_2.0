@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./NFL-Components/nfl.css";
+import "./NFL-Components/NFL-css/nfl.css";
 
 import NflToolbar from "./NFL-Components/NflToolbar";
 import LeaderTable from "./NFL-Components/Leaderboard";

@@ -4,8 +4,8 @@ import Plot from "react-plotly.js";
 class PlayerComparison extends Component{
 
   state = {
-    player1:"Gurley, Todd",
-    player2:"Conner, James",
+    player1:"Ryan, Matt",
+    player2:"Watson, Deshaun",
     WeeklyStats: [],
   };
 
@@ -39,7 +39,7 @@ class PlayerComparison extends Component{
             x:firstStat.map(item => item.week),
             y:firstStat.map(item => item.yh_points),
             type: "line",
-            mode: "markers",
+            mode: "lines+markers",
             marker: {color:"Blue"},
             hoverinfo: "y",
             name: p1,
@@ -49,7 +49,7 @@ class PlayerComparison extends Component{
             x:secondStat.map(item => item.week),
             y:secondStat.map(item => item.yh_points),
             type: "line",
-            mode: "markers",
+            mode: "lines+markers",
             marker: {color:"Red"},
             hoverinfo: "y",
             name: p2,

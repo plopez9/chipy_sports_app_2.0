@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./NBA-App.css";
 
-import ToolBar from "./toolbar/toolbar";
+import ToolBar from "./NBA-Components/NBAtoolbar";
 import ScatterApp from "./NBA-Components/Scatter_Container";
 import FirstPlot from "./NBA-Components/Bar_Chart";
 import PlayerApp from "./NBA-Components/Player_Container";

@@ -2,12 +2,17 @@
 
   border-style: ridge;
   overflow: auto;
-  height: 400px;
+  height: 420px;
   width:840px;
-  background-color: white;
+  background-color: #F2F3F4;
   margin: auto;
+  opacity:0.95
 }
 
+.RadioDiv{
+  height: 20px;
+  margin-bottom: 8px;
+}
 .Table-Header{
-  background-color: #F0F8FF;
+  background-color: #D4E6F1;
 }

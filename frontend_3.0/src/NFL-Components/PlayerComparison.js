@@ -4,8 +4,6 @@ import Plot from "react-plotly.js";
 class PlayerComparison extends Component{
 
   state = {
-    player1:"Ryan, Matt",
-    player2:"Watson, Deshaun",
     WeeklyStats: [],
   };
 
@@ -21,8 +19,8 @@ class PlayerComparison extends Component{
   };
 
   render(){
-    var p1 = this.state.player1
-    var p2 = this.state.player2
+    var p1 = this.props.player1
+    var p2 = this.props.player2
 
     var firstStat = this.state.WeeklyStats.filter(function(item){
       return item.name === p1
@@ -34,6 +32,11 @@ class PlayerComparison extends Component{
 
     return(
       <Plot
+        style={{
+          height:"420px",
+          width: "840px",
+          display: "inline-block",
+        }}
         data = {[
           {
             x:firstStat.map(item => item.week),
@@ -58,11 +61,18 @@ class PlayerComparison extends Component{
 
         layout ={{
           autosize: true,
+
+          title:{
+            text: "Weekly Fantasy Performance"
+          },
           yaxis:{
             title: "Fantasy Points Scored"
           },
           xaxis:{
-            title: "Scheduled Week"
+            title: "Scheduled Week",
+            dtick: 1,
+            showgrid: "True",
+            range: [0,17.2],
           }
         }}
       />

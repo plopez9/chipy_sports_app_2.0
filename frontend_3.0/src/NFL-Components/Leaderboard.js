@@ -61,10 +61,13 @@ class LeaderTable extends Component{
     this.state.YearlyStats.sort(compare)
 
       return(
+
           <div className="DisplayTable">
+            <div className="RadioDiv">All QB RB WR TE Def </div>
+
             <thead className="Table-Header">
               <tr>
-              <th> Player </th>
+              <th> Player</th>
               <th> Pos </th>
               <th> Year </th>
               <th> GP </th>

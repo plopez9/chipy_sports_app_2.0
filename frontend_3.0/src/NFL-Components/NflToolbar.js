@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import {BrowserRouter, Route, NavLink,} from "react-router-dom";
 
-import "./NFL-css/NflToolbar.css"
+import "./NFL-css/NflToolbar.css";
 
-import LeaderTable from "./Leaderboard"
+import LeaderTable from "./Leaderboard";
 import PlayerComparison from "./PlayerComparison";
+import Matchup from "./Matchup";
 
 class NflToolbar extends Component {
+
+  state = {
+    player1:"Brady, Tom",
+    player2:"Wentz, Carson",
+  };
 
   render(){
 
@@ -39,7 +45,11 @@ class NflToolbar extends Component {
              placeholder="Player 2"
              />
 
-            <button className="PushButton"> Search </button>
+            <button
+             className="PushButton">
+             Search
+            </button>
+
             <input
              type="text"
              className="PlayerSearch"
@@ -48,7 +58,16 @@ class NflToolbar extends Component {
           </div>
         </nav>
           <Route path="/NFL/Leaderboard" component={LeaderTable}/>
-          <Route path="/NFL/PlayerComparison" component={PlayerComparison}/>
+          <Route path="/NFL/PlayerComparison"
+           render = {(props) => <PlayerComparison
+            player1={this.state.player1}
+            player2={this.state.player2}
+            />}/>
+          <Route path = "/NFL/MatchupTool"
+           render = {(props) => <Matchup
+             player1={this.state.player1}
+             player2={this.state.player2}
+             />}/>
       </BrowserRouter>
     )
   }

@@ -3,20 +3,41 @@ import avatar from "./images/default-avatar.png";
 import helmet from "./images/Generic-Helmet.png";
 
 class MatchupCard extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      team: "chi",
+      defense:[],
+    };
+  }
+
+  componentWillMount(){
+
+    fetch("http://localhost:8000/nfl_package/DefensiveSummary/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        defense: json,
+      })
+    });
+  };
+
 
   render(){
     var player =this.props.player
     var data = this.props.stats
-
+    var team = this.state.team
     var pinfo = data.filter(function(item){
       return item.name === player
     });
-
     var dinfo = data.filter(function(item){
       return item.name === "Chicago"
     });
 
-    console.log(dinfo)
+    var test2 = pinfo.map(item => item.pos)[0]
+    var test = this.state.defense.filter(function(item){
+      return item.oppt === team
+    });
 
       return(
         <div className="PlayerCard" style={{

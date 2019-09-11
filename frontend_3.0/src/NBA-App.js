@@ -51,9 +51,9 @@ class NBAApp extends Component {
 
 
   render(){
-
+    console.log(this.state.Player)
     return(
-      <div className="App">
+      <div className="NBA_App">
 
       <ToolBar nameSelect={this.PlayerSelect.bind(this)}/>
 

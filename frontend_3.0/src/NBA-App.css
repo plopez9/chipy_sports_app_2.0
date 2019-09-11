@@ -9,9 +9,9 @@ body {
   height: 100vh;
 }
 
-.App {
+.NBA_App {
   height:100%;
-  background-image: url("../src/NFL-Components/images/football.jpg");
+  background-image: url("../src/NBA-Components/images/Hardwood.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

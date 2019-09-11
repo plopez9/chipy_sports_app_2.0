@@ -6,34 +6,18 @@ import "./NFL-css/NflToolbar.css";
 import LeaderTable from "./Leaderboard";
 import PlayerComparison from "./PlayerComparison";
 import Matchup from "./Matchup";
+import SearchTool from "./SearchTool";
 
 class NflToolbar extends Component {
   constructor(props){
     super(props);
     this.state = {
       player1:"Brady, Tom",
-      player2:"Wentz, Carson",
+      player2: "Rodgers, Aaron",
     };
-
-    this.Player1Handle = this.Player1Handle.bind(this);
-    this.Player2Handle = this.Player2Handle.bind(this);
-  }
-
-  Player1Handle(event) {
-    this.setState({
-      player1: event.target.value
-    })
-  }
-
-  Player2Handle(event) {
-    this.setState({
-      player2: event.target.value
-    })
   }
 
   render(){
-
-    console.log(this.state)
 
     return(
       <BrowserRouter>
@@ -54,32 +38,9 @@ class NflToolbar extends Component {
             </ul>
           </div>
 
-          <div className ="PlayerButtons" style = {{
-            marginRight:"0px",
-          }}>
-            <button className="PushButton"> Search </button>
-            <input
-             type="text"
-             className="PlayerSearch"
-             placeholder="Player 2"
-             value={this.state.player2}
-             onChange={(event) => this.Player2Handle(event)}
-             />
-
-            <button
-             className="PushButton"
-             onClick = {this.Player1Handle.bind(this)}>
-             Search
-            </button>
-
-            <input
-             type="text"
-             className="PlayerSearch"
-             value={this.state.player1}
-             onChange={this.Player1Handle.bind(this)}
-
-             />
-
+          <div className ="PlayerButtons">
+            <SearchTool/>
+            <SearchTool/>
           </div>
         </nav>
           <Route path="/NFL/Leaderboard" component={LeaderTable}/>

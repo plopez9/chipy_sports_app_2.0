@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import "./NFL-css/Matchup.css"
+
 import avatar from "./images/default-avatar.png";
 import helmet from "./images/Generic-Helmet.png";
 
@@ -34,50 +37,30 @@ class MatchupCard extends Component{
       return item.name === "Chicago"
     });
 
-    var test2 = pinfo.map(item => item.pos)[0]
-    var test = this.state.defense.filter(function(item){
-      return item.oppt === team
+    var strPos = pinfo.map(item => item.pos)[0]
+
+
+    var oppTeam = this.state.defense.filter((item)=>{
+      return item.pos === strPos && item.oppt === this.state.team
     });
 
+    console.log(oppTeam)
+
       return(
-        <div className="PlayerCard" style={{
-          backgroundColor:"white",
-          width: "512px",
-          height: "100%",
-          display:"inline-block",
-          borderStyle:"ridge",
-          backgroundColor: "#F2F3F4",
-          opacity:"0.94",
-        }}>
-          <div className="topHalf" style={{
-            marginTop:"30px",
-            height: "28%",
-          }}>
+        <div className="PlayerCard">
+          <div className="topHalf">
             <h1> Matchup Rating </h1>
             <h2> 21.9 </h2>
           </div>
 
-          <div className="bottomHalf" style={{
-            height:"62%",
-            display:"flex",
-            justifyContent:"space-evenly",
-          }}>
-            <div className="playerStat" style={{
-              width: "45%",
-              borderStyle:"outset",
-              backgroundColor:"white",
-              }}>
+          <div className="bottomHalf">
+            <div className="playerStat">
               <img src={avatar} style={{
                 height:"68%",
                 marginBottom:"4px",
               }}/>
               <h5>{this.props.player}</h5>
-              <div className="StatCard" style={{
-                width:"90%",
-                display: "grid",
-                margin:"auto",
-                gridTemplateColumns: "repeat(2, 1fr)",
-              }}>
+              <div className="StatCard">
                 <div className="column1">
                   <div>Pos: {pinfo.map(item => item.pos)}</div>
                   <div> GP: {pinfo.map(item => item.gp)}</div>
@@ -88,11 +71,7 @@ class MatchupCard extends Component{
                 </div>
               </div>
             </div>
-            <div className="dStat" style={{
-              width:"45%",
-              borderStyle:"outset",
-              backgroundColor:"white",
-            }}>
+            <div className="dStat">
               <img src={helmet} style={{
                 marginTop:"15px",
                 height:"60%",
@@ -100,12 +79,7 @@ class MatchupCard extends Component{
                 marginBottom:"9px",
               }}/>
               <h5>{dinfo.map(item => item.name)}</h5>
-              <div className="StatCard" style={{
-                width:"90%",
-                display: "grid",
-                margin:"auto",
-                gridTemplateColumns: "repeat(2, 1fr)",
-              }}>
+              <div className="StatCard">
                 <div className="column1">
                   <div>Pos: {dinfo.map(item => item.pos)}</div>
                   <div> GP: {dinfo.map(item => item.gp)}</div>

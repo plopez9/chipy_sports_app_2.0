@@ -19,12 +19,24 @@
   float: right;
 }
 
+.P1D{
+  overflow:auto;
+  width:260px;
+  float:right;
+}
+
+.P2D{
+  width:260px;
+  float:right;
+}
+
 .PlayerButtons{
   width: 60%;
   float: right;
   position: relative;
   top:50%;
   transform:translateY(-50%) ;
+  margin-right: 0px;
 }
 
 .PlayerSearch{

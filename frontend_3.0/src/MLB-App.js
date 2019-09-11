@@ -22,9 +22,7 @@ class MLBApp extends Component {
   render(){
 
     return(
-      <div className="MLBApp" style={{
-        backgroundColor:"green"
-      }}>
+      <div className="MLBApp">
         <div className="content">
           <div className="text">
             <h4> New MLB Page Coming Soon! </h4>

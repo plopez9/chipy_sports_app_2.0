@@ -17,6 +17,18 @@ class NflToolbar extends Component {
     };
   }
 
+  Player1Select(input){
+    this.setState({
+      player1: input
+    });
+  }
+
+  Player2Select(input){
+    this.setState({
+      player2: input
+    });
+  }
+
   render(){
 
     return(
@@ -39,8 +51,8 @@ class NflToolbar extends Component {
           </div>
 
           <div className ="PlayerButtons">
-            <SearchTool/>
-            <SearchTool/>
+            <SearchTool nameSelect={this.Player2Select.bind(this)}/>
+            <SearchTool nameSelect={this.Player1Select.bind(this)}/>
           </div>
         </nav>
           <Route path="/NFL/Leaderboard" component={LeaderTable}/>

@@ -9,7 +9,7 @@ class MatchupCard extends Component{
   constructor(props){
     super(props);
     this.state = {
-      team: "chi",
+      team: "atl",
       defense:[],
     };
   }
@@ -78,15 +78,15 @@ class MatchupCard extends Component{
                 width:"98%",
                 marginBottom:"9px",
               }}/>
-              <h5>{dinfo.map(item => item.name)}</h5>
+              <h5>{oppTeam.map(item => item.oppt)}</h5>
               <div className="StatCard">
                 <div className="column1">
-                  <div>Pos: {dinfo.map(item => item.pos)}</div>
-                  <div> GP: {dinfo.map(item => item.gp)}</div>
+                  <div>Pos: Def</div>
+                  <div> GP: {oppTeam.map(item => item.gp)}</div>
                 </div>
                 <div className="column2">
-                <div>Pts Alwd: {dinfo.map(item => item.average_points_scored)}</div>
-                <div> Std: {dinfo.map(item=> item.std)}</div>
+                <div>Pts Alwd: {oppTeam.map(item => item.yh_points)}</div>
+                <div> Std: {oppTeam.map(item=> item.std)}</div>
                 </div>
               </div>
             </div>

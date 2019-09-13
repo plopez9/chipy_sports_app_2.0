@@ -18,11 +18,11 @@ class NflStatsSerializer(serializers.ModelSerializer):
 class DefensiveSummarySerializer(serializers.ModelSerializer):
     class Meta:
         model = DefensiveSummary
-        fields = ("oppt", "pos", "yh_points",)
+        fields = ("oppt", "pos", "points_allowed", "gp", "std")
         read_only_fields = [f.name for f in DefensiveSummary._meta.get_fields()]
 
 class DefensiveStatsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DefensiveStats
-        fields = ("oppt", "week", "pos", "yh_points",)
+        fields = ("oppt", "week", "pos", "points_allowed",)
         read_only_fields = [f.name for f in DefensiveStats._meta.get_fields()]

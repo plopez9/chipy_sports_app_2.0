@@ -63,8 +63,6 @@ class LeaderTable extends Component{
       return(
 
           <div className="DisplayTable">
-            <div className="RadioDiv">All QB RB WR TE Def </div>
-
             <thead className="Table-Header">
               <tr>
               <th> Player</th>

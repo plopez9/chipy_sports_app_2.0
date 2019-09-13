@@ -1,5 +1,8 @@
 
 .MLBApp{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("./images/Home_Plate.jpg");
   height: 100vh;
   text-align: center;
 }

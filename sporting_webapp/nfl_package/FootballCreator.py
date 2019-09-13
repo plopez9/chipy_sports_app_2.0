@@ -67,10 +67,21 @@ class FootballData:
             opt_rb ["Pos"] = p
             defense = pd.concat([defense, opt_rb])
 
+        defense.reset_index(inplace=True)
+        defense.set_index(["Pos", "Oppt", "Week"], inplace=True)
+
+        idx = pd.IndexSlice
+        temp = defense.loc[idx["WR",:], idx["YH points"]].transform(lambda x: x/2)
+        defense.update(temp, join="left", overwrite=True, filter_func=None, raise_conflict=False)
+
         return defense
 
     def DefenseSummary(self, start, end):
-        d_summary = round(FootballData(self.year).DefenseData(start, end).groupby(["Oppt", "Pos"]).mean(), 2)
+        defense = FootballData(self.year).DefenseData(start, end)
+        d_summary = round(defense.groupby(["Oppt","Pos"]).mean(),2)
+        d_summary["GP"] = defense.groupby(["Oppt", "Pos"]).count()
+        d_summary["STD"] = round(defense.groupby(["Oppt", "Pos"]).std(), 2)
+
         return d_summary
 
 
@@ -84,10 +95,6 @@ class FootballData:
         opt_mean.reset_index(inplace=True)
         players = pd.merge(players, opt_mean, on=["Pos", "Oppt"])
         players.set_index(["Pos", "Name", "Year", "Week", "Oppt"], inplace=True)
-
-        idx = pd.IndexSlice
-        temp = players.loc[idx["WR",:], idx["Average Points Allowed"]].transform(lambda x:x/2)
-        players.update(temp, join="left", overwrite=True, filter_func = None, errors="ignore")
 
         player_mean = round(players.groupby(["Name", "Pos", "Year"]).mean(), 2)
         player_mean = player_mean.rename(columns={"YH points": "Average Points Scored"})
@@ -105,18 +112,18 @@ class FootballData:
         return summary
 
 # Database Creation
-#print(FootballData(2018).PlayerSummary(1,18).reset_index())
-
+print(FootballData(2018).DefenseData(1,18))
+print(FootballData(2018).DefenseSummary(1,18))
 
 #for n in range(2016, 2019):
-#    Defense = FootballData(n).DefenseData(1,18)
-#    DefenseSummary = FootballData(n).DefenseSummary(1,18)
-#    NFLStats = FootballData(n).YearData(1,18)
-#    NFLSummary = FootballData(n).PlayerSummary(1,18)
+# Defense = FootballData(2018).DefenseData(1,18)
+# DefenseSummary = FootballData(2018).DefenseSummary(1,18)
+# NFLStats = FootballData(2018).YearData(1,18)
+# NFLSummary = FootballData(2018).PlayerSummary(1,18)
 
-#engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
-
-#Defense.to_sql("Defensive Stats", con = engine, if_exists= "replace", chunksize = 10)
-#DefenseSummary.to_sql("Defensive Summary", con = engine, if_exists="replace", chunksize = 10)
-#NFLStats.to_sql("NFL Stats", con= engine, if_exists="replace", chunksize=10)
-#NFLSummary.to_sql("NFL Summary", con= engine, if_exists="replace", chunksize=10)
+# engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
+#
+# Defense.to_sql("Defensive Stats", con = engine, if_exists= "replace", chunksize = 10)
+# DefenseSummary.to_sql("Defensive Summary", con = engine, if_exists="replace", chunksize = 10)
+# NFLStats.to_sql("NFL Stats", con= engine, if_exists="replace", chunksize=10)
+# NFLSummary.to_sql("NFL Summary", con= engine, if_exists="replace", chunksize=10)

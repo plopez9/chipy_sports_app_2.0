@@ -12,8 +12,8 @@ class NflToolbar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      player1:"Brady, Tom",
-      player2: "Rodgers, Aaron",
+      player1:"Tom Brady",
+      player2: "Aaron Rodgers",
     };
   }
 

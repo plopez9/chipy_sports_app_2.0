@@ -2,15 +2,18 @@ import React, { Component } from "react";
 
 import "./NFL-css/Matchup.css"
 
+import Calculator from "./MatchupCalculator"
 import avatar from "./images/default-avatar.png";
 import helmet from "./images/Generic-Helmet.png";
+
 
 class MatchupCard extends Component{
   constructor(props){
     super(props);
     this.state = {
-      team: "atl",
+      team: "chi",
       defense:[],
+      teams:[]
     };
   }
 
@@ -25,52 +28,46 @@ class MatchupCard extends Component{
     });
   };
 
-
   render(){
-    var player =this.props.player
-    var data = this.props.stats
-    var team = this.state.team
-    var pinfo = data.filter(function(item){
-      return item.name === player
-    });
-    var dinfo = data.filter(function(item){
-      return item.name === "Chicago"
-    });
-
-    var strPos = pinfo.map(item => item.pos)[0]
-
+    var pinfo = this.props.stats.filter((item) =>{
+      return item.name === this.props.player
+    })
 
     var oppTeam = this.state.defense.filter((item)=>{
-      return item.pos === strPos && item.oppt === this.state.team
-    });
+      return (item.pos === pinfo.map(item => item.pos)[0]
+      && item.oppt === this.state.team)
+    })
 
-    console.log(oppTeam)
+    this.state.teams = [... new Set (this.state.defense.map(item=>
+    item.oppt))];
 
       return(
         <div className="PlayerCard">
-          <div className="topHalf">
-            <h1> Matchup Rating </h1>
-            <h2> 21.9 </h2>
-          </div>
+          <Calculator pinfo={pinfo} oppTeam={oppTeam}/>
 
           <div className="bottomHalf">
             <div className="playerStat">
+
               <img src={avatar} style={{
                 height:"68%",
                 marginBottom:"4px",
               }}/>
+
               <h5>{this.props.player}</h5>
+
               <div className="StatCard">
                 <div className="column1">
                   <div>Pos: {pinfo.map(item => item.pos)}</div>
                   <div> GP: {pinfo.map(item => item.gp)}</div>
                 </div>
+
                 <div className="column2">
                   <div>Avg Pts: {pinfo.map(item => item.average_points_scored)}</div>
                   <div> Std: {pinfo.map(item=> item.std)}</div>
                 </div>
               </div>
             </div>
+
             <div className="dStat">
               <img src={helmet} style={{
                 marginTop:"15px",
@@ -78,14 +75,21 @@ class MatchupCard extends Component{
                 width:"98%",
                 marginBottom:"9px",
               }}/>
-              <h5>{oppTeam.map(item => item.oppt)}</h5>
+
+              <div className="CardHeading">
+                <h5>
+                  <button className="dropDown"> Vs </button>
+                  {oppTeam.map(item => item.oppt.toUpperCase())}
+                </h5>
+              </div>
+
               <div className="StatCard">
                 <div className="column1">
                   <div>Pos: Def</div>
                   <div> GP: {oppTeam.map(item => item.gp)}</div>
                 </div>
                 <div className="column2">
-                <div>Pts Alwd: {oppTeam.map(item => item.yh_points)}</div>
+                <div>Pts Alwd: {oppTeam.map(item => item.points_allowed)}</div>
                 <div> Std: {oppTeam.map(item=> item.std)}</div>
                 </div>
               </div>

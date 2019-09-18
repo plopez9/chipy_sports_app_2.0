@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import "./NFL-css/Matchup.css"
 
 import Calculator from "./MatchupCalculator"
+import FilterButton from "./TeamFilter"
+
 import avatar from "./images/default-avatar.png";
 import helmet from "./images/Generic-Helmet.png";
 
@@ -13,7 +15,6 @@ class MatchupCard extends Component{
     this.state = {
       team: "chi",
       defense:[],
-      teams:[]
     };
   }
 
@@ -38,7 +39,7 @@ class MatchupCard extends Component{
       && item.oppt === this.state.team)
     })
 
-    this.state.teams = [... new Set (this.state.defense.map(item=>
+    var teamList = [... new Set (this.state.defense.map(item=>
     item.oppt))];
 
       return(
@@ -46,6 +47,7 @@ class MatchupCard extends Component{
           <Calculator pinfo={pinfo} oppTeam={oppTeam}/>
 
           <div className="bottomHalf">
+
             <div className="playerStat">
 
               <img src={avatar} style={{
@@ -76,10 +78,14 @@ class MatchupCard extends Component{
                 marginBottom:"9px",
               }}/>
 
-              <div className="CardHeading">
+              <div className="CardHeading" style={{
+                display:"inline-block"
+              }}>
                 <h5>
-                  <button className="dropDown"> Vs </button>
-                  {oppTeam.map(item => item.oppt.toUpperCase())}
+                  <FilterButton
+                  currentTeam = {this.state.team.toUpperCase()}
+                  teams = {teamList}
+                  />
                 </h5>
               </div>
 

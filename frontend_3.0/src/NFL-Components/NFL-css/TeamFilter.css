@@ -1,0 +1,12 @@
+.button{
+    background-color:#ff3232 ;
+    padding:12px;
+    border-radius:5px;
+    font-weight:bold;
+    color:white;
+    display:inline-block;
+}
+
+.drop{
+  color:black;
+}

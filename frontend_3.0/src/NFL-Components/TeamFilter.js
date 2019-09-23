@@ -8,11 +8,21 @@ class FilterButton extends Component{
 
     this.state = {
       displayMenu:false,
+      currentTeam: this.props.currentTeam,
     };
 
+    this.sendTeam = this.sendTeam.bind(this);
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   };
+
+  changeTeam(event){
+    this.setState({currentTeam: event})
+  }
+
+  sendTeam(){
+    this.props.select(this.state.currentTeam)
+  }
 
   showDropdownMenu(event){
     event.preventDefault();
@@ -23,29 +33,26 @@ class FilterButton extends Component{
 
   hideDropdownMenu(event){
     this.setState({displayMenu:false}, () => {
+      this.sendTeam(event);
       document.removeEventListener("click", this.hideDropdownMenu);
     });
   }
 
   render(){
-    console.log(this.props.teams)
+
+    console.log(this.state.currentTeam)
     return(
       <div className="button" onClick={this.showDropdownMenu} style={{
         backgroundColor:"rgb(153, 163, 164)",
         width: "100px",
         position:"relative",
       }}>
-        <div className="buttonHeader" style={{
-          display:"flex",
-          justifyContent:"center",
-          marginLeft:"20px",
-          position:"fixed",
-        }}>
+        <div className="buttonHeader">
           vs {this.props.currentTeam}
         </div>
 
       {this.state.displayMenu ? (
-        <div className="drop" style={{
+        <div className="dropDiv" style={{
           backgroundColor:"rgb(229, 232, 232)",
           height:"95px",
           marginTop:"127px",
@@ -57,7 +64,10 @@ class FilterButton extends Component{
               float:"left",
               direction:"rtl"
             }}>
-              {this.props.teams.map(item=> <li> {item.toUpperCase()} </li>)}
+              {this.props.teams.map(item=> <li
+                onClick= {() => {this.changeTeam(item);
+                this.sendTeam(item);}}>
+                {item.toUpperCase()} </li>)}
             </ul>
           </div>
         </div>

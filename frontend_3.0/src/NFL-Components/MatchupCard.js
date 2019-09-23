@@ -18,6 +18,12 @@ class MatchupCard extends Component{
     };
   }
 
+  teamSelect(input){
+    this.setState({
+      team: input
+    });
+  }
+
   componentWillMount(){
 
     fetch("http://localhost:8000/nfl_package/DefensiveSummary/?format=json")
@@ -85,6 +91,7 @@ class MatchupCard extends Component{
                   <FilterButton
                   currentTeam = {this.state.team.toUpperCase()}
                   teams = {teamList}
+                  select = {this.teamSelect.bind(this)}
                   />
                 </h5>
               </div>

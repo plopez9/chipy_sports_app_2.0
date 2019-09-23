@@ -22,7 +22,6 @@ class Calculator extends Component{
     }
 
 
-    console.log(ratio)
       return(
         <div className="topHalf">
           <h1> Matchup Rating </h1>

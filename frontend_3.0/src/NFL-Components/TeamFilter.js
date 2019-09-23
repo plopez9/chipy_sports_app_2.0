@@ -11,7 +11,6 @@ class FilterButton extends Component{
       currentTeam: this.props.currentTeam,
     };
 
-    this.sendTeam = this.sendTeam.bind(this);
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   };
@@ -40,7 +39,6 @@ class FilterButton extends Component{
 
   render(){
 
-    console.log(this.state.currentTeam)
     return(
       <div className="button" onClick={this.showDropdownMenu} style={{
         backgroundColor:"rgb(153, 163, 164)",
@@ -65,8 +63,7 @@ class FilterButton extends Component{
               direction:"rtl"
             }}>
               {this.props.teams.map(item=> <li
-                onClick= {() => {this.changeTeam(item);
-                this.sendTeam(item);}}>
+                onClick= {() => {this.changeTeam(item);}}>
                 {item.toUpperCase()} </li>)}
             </ul>
           </div>

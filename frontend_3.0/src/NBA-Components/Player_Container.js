@@ -6,10 +6,34 @@ import avatar from "./images/default-avatar.png";
 
 
 class PlayerApp extends Component {
+
+  state={
+    SummaryItems:[],
+    InfoItems:[]
+  }
+
+  componentWillMount(){
+    fetch("http://localhost:8000/nba_package/Summary/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        SummaryItems: json,
+      })
+    });
+
+    fetch("http://localhost:8000/nba_package/PlayerInfo/?format=json")
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        InfoItems: json,
+      })
+    });
+  };
+
   render(){
     var player = this.props.player
-    var data = this.props.data
-    var info =this.props.info
+    var data = this.state.SummaryItems
+    var info =this.state.InfoItems
 
     var pInfo = info.filter(function(item){
       return item.player === player
@@ -20,6 +44,7 @@ class PlayerApp extends Component {
     })
 
     return(
+      <div className="Player-data">
       <div className="App">
         <div className="card">
 
@@ -137,6 +162,7 @@ class PlayerApp extends Component {
               </div>
             </div>
         </div>
+      </div>
       </div>
     );
   }

@@ -11,7 +11,7 @@ class PlayerSerializer(serializers.ModelSerializer):
 class ContractSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contracts
-        fields = ("player", "tm", "number_2018_19", "number_2019_20",
+        fields = ("player", "tm", "number_2019_20",
             "number_2020_21", "number_2021_22", "number_2022_23",
             "number_2023_24", "signed_using", "guaranteed")
         read_only_fields = [f.name for f in Contracts._meta.get_fields()]

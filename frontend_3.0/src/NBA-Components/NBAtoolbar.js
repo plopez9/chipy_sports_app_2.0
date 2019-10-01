@@ -1,11 +1,17 @@
 import React, {Component} from "react";
+import {BrowserRouter, Route, NavLink,} from "react-router-dom";
+
+import ScatterApp from "./Scatter_Container"
+import PlayerApp from "./Player_Container"
+import FirstPlot from "./Bar_Chart"
+
 import "./NBA-Component-css/toolbar.css"
 
 class ToolBar extends Component {
   constructor(props){
     super();
     this.state={
-      Player: props.currentPlayer,
+      Player: props.player,
     }
   }
 
@@ -20,9 +26,10 @@ class ToolBar extends Component {
   }
 
   render(){
-
+    console.log(this.props.player)
     return(
       <header className= "Thead">
+        <BrowserRouter>
         <nav className= "Navbar">
         <div className="Spacer"></div>
         <div className= "Logo"> Open </div>
@@ -41,12 +48,37 @@ class ToolBar extends Component {
                  onChange={(event) => this.eventHandle(event)}
                 />
               </li>
-              <li> X-Dropdown </li>
-              <li> Y-Dropdown </li>
-              <li> Blogpost </li>
+              <li><NavLink to="/NBA/ScoringSummary"> Scoring Summary </NavLink></li>
+              <li><NavLink to="PlayerStats"> Player Stats </NavLink> </li>
+              <li><NavLink to ="/NBA/Contract"> Contract </NavLink></li>
             </ul>
           </div>
         </nav>
+
+        <div className="RoutingDiv" style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems:"center",
+          height: "485px",
+        }}>
+        <Route path="/NBA/ScoringSummary"
+        render = {(props) => <ScatterApp
+          player = {this.props.player}/>}
+          />
+
+        <Route path="/NBA/PlayerStats"
+        render = {(props) => <PlayerApp
+          player = {this.props.player}/>}
+          />
+
+        <Route path="/NBA/Contract"
+        render = {(props) => <FirstPlot
+          player = {this.props.player}/>}
+          />
+
+        </div>
+
+        </BrowserRouter>
       </header>
     )
   }

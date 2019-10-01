@@ -80,8 +80,6 @@ class Contracts(models.Model):
     player = models.TextField(primary_key=True,
     db_column='Player', blank=True, null=False)
     tm = models.TextField(db_column='Tm', blank=True, null=True)
-    number_2018_19 = models.BigIntegerField(db_column='2018-19',
-     blank=True, null=True)
     number_2019_20 = models.BigIntegerField(db_column='2019-20',
      blank=True, null=True)
     number_2020_21 = models.BigIntegerField(db_column='2020-21',

@@ -55,20 +55,14 @@ class NBAApp extends Component {
     return(
       <div className="NBA_App">
 
-      <ToolBar nameSelect={this.PlayerSelect.bind(this)}/>
+      <ToolBar nameSelect={this.PlayerSelect.bind(this)}
+      player={this.state.Player}/>
 
         <div className="TopRow">
-          <ScatterApp player={this.state.Player} data={this.state.SummaryItems}/>
+
         </div>
 
         <div className="Row">
-          <div className="Player-data">
-            <PlayerApp player={this.state.Player} info={this.state.InfoItems}
-             data={this.state.SummaryItems}/>
-          </div>
-          <div className="Contract-data">
-            <FirstPlot player={this.state.Player} contracts={this.state.ContractItems}/>
-          </div>
         </div>
 
       </div>

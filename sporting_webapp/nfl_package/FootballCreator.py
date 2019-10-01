@@ -124,10 +124,10 @@ class FootballData:
 # Database Creation
 #print(FootballData(2018).YearData(1,18))
 
-Defense = FootballData(2018).DefenseData(1,18)
-DefenseSummary = FootballData(2018).DefenseSummary(1,18)
-NFLStats = FootballData(2018).YearData(1,18)
-NFLSummary = FootballData(2018).PlayerSummary(1,18)
+Defense = FootballData(2019).DefenseData(1,5)
+DefenseSummary = FootballData(2019).DefenseSummary(1,5)
+NFLStats = FootballData(2019).YearData(1,5)
+NFLSummary = FootballData(2019).PlayerSummary(1,5)
 
 engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
 

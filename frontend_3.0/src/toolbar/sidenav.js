@@ -24,7 +24,7 @@ const Sidenav = props => {
             <li></li>
             <li> <a href="./src/App.js"> Main Page </a> </li>
             <li>
-              <Link to="/NBA"> NBA Dashboard </Link>
+              <Link to="/NBA/ScoringSummary"> NBA Dashboard </Link>
             </li>
             <li>
               <Link to="/NFL/Leaderboard"> NFL Dashboard </Link>

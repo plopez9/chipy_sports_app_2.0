@@ -138,7 +138,7 @@ def get_contracts():
     contract_data = pd.DataFrame(columns, columns=headers)
 
     #turn numeric columns to float
-    labels = ["2018-19", "2019-20", "2020-21", "2021-22",
+    labels = ["2019-20", "2020-21", "2021-22",
     "2022-23","2023-24", 'Guaranteed']
     contract_data[labels] = contract_data[labels].replace("", 0).fillna(0)
 
@@ -158,13 +158,13 @@ def get_contracts():
 #Make Tables
 #summary_tabel = SummaryScrape(2019).make_data()
 #p_table = PlayerScrape(2019).get_players()
-#contract_data = get_contracts()
+contract_data = get_contracts()
 
 
 ##Create Database
-#engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
+engine = create_engine(r"sqlite:///C:\Users\Pedro\Desktop\Programs\chipy_sports_app\sporting_webapp\nba.db")
 
-# contract_data.to_sql("Contracts", con = engine, if_exists= "replace", chunksize = 10)
+contract_data.to_sql("Contracts", con = engine, if_exists= "replace", chunksize = 10)
 # p_table.to_sql("Player Info", con = engine, if_exists="replace", chunksize = 10)
 #summary_tabel.to_sql("Summary Stats", con= engine, if_exists="replace", chunksize=10)
 

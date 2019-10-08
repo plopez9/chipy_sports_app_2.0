@@ -21,7 +21,7 @@ class ScatterApp extends Component {
   render(){
 
     return(
-      <div className="TopRow">
+      <div className="TopRow" style={{width:"80%"}}>
         <div className="testdiv">
           <div className="card  card-tasks" >
             <SecondPlot

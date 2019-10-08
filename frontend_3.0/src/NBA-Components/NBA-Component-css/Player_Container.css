@@ -9,13 +9,16 @@ h2{
 
 .card {
   width: 100%;
-  height: 380px;
+  height: 340px;
 }
 
 .Prow {
   text-align: center;
 }
 
+.Player-data{
+  width: 675px;
+}
 .Player_Column{
   float: left;
   padding-left:20px;

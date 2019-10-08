@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Link} from "react-router-dom";
 
 import "./toolbar-css/side-nav.css"
 
+import MainPage from "../Main-Page"
 import NBAApp from "../NBA-App"
 import NFLApp from "../NFL-App"
 import MLBApp from "../MLB-App"
@@ -22,7 +23,7 @@ const Sidenav = props => {
         <CloseButton className="Button" click={props.SNClick}/>
           <ul>
             <li></li>
-            <li> <a href="./src/App.js"> Main Page </a> </li>
+            <li> <a href="/"> Main Page </a> </li>
             <li>
               <Link to="/NBA/ScoringSummary"> NBA Dashboard </Link>
             </li>
@@ -36,7 +37,7 @@ const Sidenav = props => {
         </div>
     </nav>
 
-    <Route path="/src" component={NBAApp}/>
+    <Route exact path="/" component={MainPage}/>
     <Route path="/NBA" component={NBAApp}/>
     <Route path="/NFL" component={NFLApp}/>
     <Route path="/MLB" component={MLBApp}/>

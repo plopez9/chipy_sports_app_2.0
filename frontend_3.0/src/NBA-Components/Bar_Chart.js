@@ -52,7 +52,7 @@ class FirstPlot extends Component{
           layout ={{
             title: player + "'s Contract Obligations",
             autosize: false,
-            width:600,
+            width:750,
             height:410,
             yaxis:{
               title: "Money Owed",

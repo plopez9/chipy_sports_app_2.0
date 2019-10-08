@@ -1,0 +1,29 @@
+.App_Card{
+  display:inline-block;
+  width:25%;
+  height:100%;
+  text-align: center;
+}
+.App_Containers{
+  height:300px;
+  width:75%;
+  transform: translate(0%, 35%);
+}
+
+.Icon_Container{
+  transform:translate(0%,50%);
+}
+
+.Icon_Container h2{
+  margin-top: 10px;
+}
+
+.Main_Page{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/Main-Page-Components/images/wrigley.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}

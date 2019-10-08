@@ -24,36 +24,6 @@ body {
   z-index: 2000;
 }
 
-.TopRow{
-  width: auto;
-  align-content: center;
-  height: 450px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.Row{
-  width: auto;
-  display: flex;
-  justify-content: space-around;
-  overflow: hidden;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-
-}
-
-.Player-data{
-  width:48%;
-  min-width: 560px;
-  height: 410px;
-}
-
-.Contract-data{
-  height: 410px;
-  overflow: hidden;
-}
-
 .footer{
   height: 50px;
   padding-bottom: 0px;

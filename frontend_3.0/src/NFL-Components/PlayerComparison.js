@@ -9,7 +9,7 @@ class PlayerComparison extends Component{
 
   componentWillMount(){
 
-    fetch("http://localhost:8000/nfl_package/NFLStats/?format=json")
+    fetch("http://localhost:8000/NFL/NFLStats/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

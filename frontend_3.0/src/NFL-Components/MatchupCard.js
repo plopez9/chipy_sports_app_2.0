@@ -26,7 +26,7 @@ class MatchupCard extends Component{
 
   componentWillMount(){
 
-    fetch("http://localhost:8000/nfl_package/DefensiveSummary/?format=json")
+    fetch("http://localhost:8000/NFL/DefensiveSummary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

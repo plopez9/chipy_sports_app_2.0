@@ -9,7 +9,7 @@ class ScatterApp extends Component {
   };
 
   componentWillMount(){
-    fetch("http://localhost:8000/nba_package/Summary/?format=json")
+    fetch("http://localhost:8000/NBA/Summary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

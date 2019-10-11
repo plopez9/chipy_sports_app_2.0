@@ -13,10 +13,7 @@ from django.core.serializers import serialize
 
 # Create your views here.
 def index(request):
-    return render(request, "first_screen.html")
-
-def home_screen(request):
-    return render(request, "index.html")
+    pass
 
 #def summary_request(request):
 #    response = serialize("json", st.objects.all())

@@ -9,7 +9,7 @@ class LeaderTable extends Component{
 
   componentWillMount(){
 
-    fetch("http://localhost:8000/nfl_package/NFLSummary/?format=json")
+    fetch("http://localhost:8000/NFL/NFLSummary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

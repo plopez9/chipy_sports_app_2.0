@@ -24,7 +24,7 @@ class NBAApp extends Component {
   }
 
   componentWillMount(){
-    fetch("http://localhost:8000/nba_package/Summary/?format=json")
+    fetch("http://localhost:8000/NBA/Summary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -32,7 +32,7 @@ class NBAApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/PlayerInfo/?format=json")
+    fetch("http://localhost:8000/NBA/PlayerInfo/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -40,7 +40,7 @@ class NBAApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/Contracts/?format=json")
+    fetch("http://localhost:8000/NBA/Contracts/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

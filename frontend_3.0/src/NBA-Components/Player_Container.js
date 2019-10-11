@@ -13,7 +13,7 @@ class PlayerApp extends Component {
   }
 
   componentWillMount(){
-    fetch("http://localhost:8000/nba_package/Summary/?format=json")
+    fetch("http://localhost:8000/NBA/Summary/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({
@@ -21,7 +21,7 @@ class PlayerApp extends Component {
       })
     });
 
-    fetch("http://localhost:8000/nba_package/PlayerInfo/?format=json")
+    fetch("http://localhost:8000/NBA/PlayerInfo/?format=json")
     .then(response => response.json())
     .then(json => {
       this.setState({

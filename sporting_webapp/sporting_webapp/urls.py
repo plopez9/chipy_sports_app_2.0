@@ -18,8 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
 #    path("", include("front_end.urls")),
-    path("nba_package/", include("nba_package.urls")),
-    path("nfl_package/", include("nfl_package.urls")),
-    path("mlb_package/", include("mlb_package.urls")),
+    path("NBA/", include("nba_package.urls")),
+    path("NFL/", include("nfl_package.urls")),
+    path("MLB/", include("mlb_package.urls")),
     path('admin/', admin.site.urls),
 ]

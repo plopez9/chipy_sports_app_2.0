@@ -16,7 +16,7 @@ from django.core.serializers import serialize
 
 # Create your views here.
 def index(request):
-    return render(request, "nfl_page.html")
+    pass
 
 class NFLSummaryView(viewsets.ModelViewSet):
         queryset = nps.objects.all()

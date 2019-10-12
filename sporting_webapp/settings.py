@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ["plopez9.herokuapp.com"]
+ALLOWED_HOSTS = ["plopez23.herokuapp.com"]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
@@ -156,3 +156,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
+STATIC_STORAGE = "whitenoise.django.GzipManifestStaticFilesStorage"

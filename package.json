@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "plotly.js": "^1.47.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "plotly.js": "^1.50.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-plotly.js": "^2.3.0",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8"
   },
   "scripts": {
@@ -17,8 +17,8 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node":"11.11.0",
-    "npm":"6.7.0"
+    "node": "11.11.0",
+    "npm": "6.7.0"
   },
   "eslintConfig": {
     "extends": "react-app"

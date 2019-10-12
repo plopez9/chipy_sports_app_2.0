@@ -16,9 +16,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "engines":{
+  "engines": {
     "node":"11.11.0",
-    "npm":"6.7.0",
+    "npm":"6.7.0"
   },
   "eslintConfig": {
     "extends": "react-app"
